@@ -1,0 +1,40 @@
+#!/usr/bin/env bash
+
+# mysql -uroot -pfreakkkk crypto
+# https://www.cyberciti.biz/faq/grep-regular-expressions/
+# https://www.regular-expressions.info/posixbrackets.html       # posix regex
+# https://staff.washington.edu/weller/grep.html                 # grep cheatsheet
+
+# FILE="$HOME/JupyterNotebook/projects/github/cryptotax/bash/insert.txt"
+
+### Inserts into mysql database
+# =============================
+# cat $FILE | while read testline spaceline; do
+#   echo "INSERT INTO cryptotable(testline,spaceline) VALUES ('$testline', '$spaceline');"
+# done | mysql -uroot -pfreakkkk crypto;
+
+PDF="$HOME/JupyterNotebook/projects/github/cryptotax/bash/cb_input.pdf"
+
+### ATTRIBUTES
+# ============
+#### PDFGREP
+# -----------
+# OWNER=$(pdfgrep -o "Transaction report for [a-zA-Z]+ [a-zA-Z]*" $PDF | \
+#   sed -e 's/Transaction report for //g')
+# EMAIL=$(pdfgrep -o "[a-zA-Z0-9]+@[a-zA-Z0-9]+.[a-zA-Z0-9]+" $PDF)
+
+#### RIPGREP (BETTER)
+# -------------------
+PDFCMD="pdftotext -nopgbrk -eol unix"
+OWNER=$($PDFCMD "$PDF" - | \
+  rg -o "Transaction report for \w+ \w+" | \
+  sed -e 's/Transaction report for //g')
+EMAIL=$($PDFCMD "$PDF" - | \
+  rg -o "\S+@\S+$")
+
+TIMESTAMPS=$($PDFCMD "$PDF" - | \
+  rg -o '^\d{1,4}-\d{1,4}-?\d*T\d{2}:\d{2}:\d{2}Z')
+
+echo "$OWNER"
+echo $EMAIL
+echo $TIMESTAMPS
