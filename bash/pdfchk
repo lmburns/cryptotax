@@ -2,9 +2,17 @@
 
 CHECK="$HOME/JupyterNotebook/projects/github/cryptotax/bash/fold"
 FILETYPE="pdf"
-CMD=(fd -g "*${FILETYPE}" "${CHECK}")
+# CMD=(fd -g "*${FILETYPE}" "${CHECK}")
+CMD="rg --color=never --files "${CHECK}" | rg --color=never "${FILETYPE}""
 
-until eval ${CMD[@]} | rg ${FILETYPE} > /dev/null
+until eval "$CMD" > /dev/null
 do
   sleep 1
 done
+echo "File Detected"
+
+## using fd
+# until eval ${CMD[@]} | rg ${FILETYPE} > /dev/null
+# do
+#   sleep 1
+# done
