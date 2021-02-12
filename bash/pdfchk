@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-CHECK="$HOME/JupyterNotebook/projects/github/cryptotax/bash/fold"
+CHECK="${1}"
 FILETYPE=".pdf"
 CMD="fd ${FILETYPE} ${CHECK}"
 
