@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+CHECK="$HOME/JupyterNotebook/projects/github/cryptotax/bash/fold"
+FILETYPE="pdf"
+CMD=(fd -g "*${FILETYPE}" "${CHECK}")
+
+until eval ${CMD[@]} | rg ${FILETYPE} > /dev/null
+do
+  sleep 1
+done
