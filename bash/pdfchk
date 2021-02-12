@@ -1,18 +1,26 @@
 #!/usr/bin/env bash
 
 CHECK="$HOME/JupyterNotebook/projects/github/cryptotax/bash/fold"
-FILETYPE="pdf"
-# CMD=(fd -g "*${FILETYPE}" "${CHECK}")
-CMD="rg --color=never --files "${CHECK}" | rg --color=never "${FILETYPE}""
+FILETYPE=".pdf"
+CMD="fd ${FILETYPE} ${CHECK}"
 
-until eval "$CMD" > /dev/null
+until eval "${CMD}" | rg ${FILETYPE} > /dev/null
 do
   sleep 1
 done
 echo "File Detected"
+eval "${CMD}"
+mv "$(eval "$CMD")" "${CHECK}/moved"
 
-## using fd
-# until eval ${CMD[@]} | rg ${FILETYPE} > /dev/null
+########################
+### USING RG INSTEAD ###
+########################
+
+# CMD="rg --color=never --files "${CHECK}" | rg --color=never "${FILETYPE}""
+
+# until eval "$CMD" > /dev/null
 # do
 #   sleep 1
 # done
+# echo "File Detected"
+# mv $(eval "$CMD") "${CHECK}/moved"
