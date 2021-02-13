@@ -1,0 +1,1178 @@
+Coinbase, Inc.
+
+100 Pine Street, Suite 1250 San Francisco, CA 94111
+
++1 888 908-7930
+
+support.coinbase.com
+
+Transaction report for Theodore Thudium
+
+Date range
+
+Filter
+
+Customer
+
+You can use this transaction report to inform your likely tax obligations. For US
+customers, Sells, Converts, and Rewards Income, and Coinbase Earn transactions are
+taxable events. For final tax obligations, please consult your tax advisor.
+
+From: 2012-01-01T00:00:00Z
+
+Type: all
+
+tthudium@gmail.com
+
+To: 2021-01-15T18:25:58Z
+
+Asset: all
+
+528e50c5e2b9481eda000232
+
+Timestamp
+
+Transaction
+Type
+
+Asset
+
+Quantity
+Transacted
+
+USD Spot Price at
+Transaction
+
+Subtotal Total (inclusive of Notes
+fees)
+
+2020-0521T22:27:28Z
+
+Buy
+
+BTC
+
+0.00201928
+
+9166.63
+
+$18.51
+
+$20.00
+
+Bought 0.00201928 BTC for $20.00 USD
+
+2020-0602T15:20:38Z
+
+Buy
+
+BTC
+
+0.02071895
+
+9508.69
+
+$197.01
+
+$200.00
+
+Bought 0.02071895 BTC for $200.00 USD
+
+2020-0603T23:01:33Z
+
+Send
+
+BTC
+
+0.00204369
+
+9605.50
+
+2020-0710T22:12:24Z
+
+Sell
+
+BTC
+
+0.02069454
+
+9175.85
+
+$189.89
+
+$186.90
+
+Sold 0.02069454 BTC for $186.90 USD
+
+2020-1028T03:10:31Z
+
+Buy
+
+BTC
+
+0.00346265
+
+13865.10
+
+$48.01
+
+$50.00
+
+Bought 0.00346265 BTC for $50.00 USD
+
+2020-1031T15:35:42Z
+
+Send
+
+BTC
+
+0.00346265
+
+13790.76
+
+2020-0611T14:17:13Z
+
+Buy
+
+ETH
+
+0.81330063
+
+242.24
+
+Sent 0.00204369 BTC to
+bc1q4qj0m6kqak2wghpw659ag92wuftux0crvrq4sj
+
+Sent 0.00346265 BTC to
+bc1q4qj0m6kqak2wghpw659ag92wuftux0crvrq4sj
+
+$197.01
+
+$200.00
+
+Bought 0.81330063 ETH for $200.00 USD
+
+Page 1/7
+
+Coinbase, Inc.
+
+100 Pine Street, Suite 1250 San Francisco, CA 94111
+
++1 888 908-7930
+
+support.coinbase.com
+
+Timestamp
+
+Transaction
+Type
+
+Asset
+
+Quantity
+Transacted
+
+USD Spot Price at
+Transaction
+
+Subtotal Total (inclusive of Notes
+fees)
+
+2020-0621T20:06:26Z
+
+Send
+
+ETH
+
+0.0818551
+
+229.76
+
+Sent 0.0818551 ETH to
+0xe46bf34e86f2f8a7c2000d021BAcf989fa45F896
+
+2020-0710T22:09:44Z
+
+Send
+
+ETH
+
+0.0818131
+
+239.02
+
+Sent 0.0818131 ETH to
+0xe46bf34e86f2f8a7c2000d021BAcf989fa45F896
+
+2020-0710T22:12:59Z
+
+Sell
+
+ETH
+
+0.64963243
+
+237.64
+
+$154.38
+
+$151.39
+
+Sold 0.64963243 ETH for $151.39 USD
+
+2020-0816T13:38:46Z
+
+Buy
+
+ETH
+
+0.04364641
+
+424.09
+
+$18.51
+
+$20.00
+
+Bought 0.04364641 ETH for $20.00 USD
+
+2020-0822T15:02:41Z
+
+Send
+
+ETH
+
+0.04364641
+
+392.30
+
+2020-1016T12:36:44Z
+
+Buy
+
+ETH
+
+0.12943303
+
+370.93
+
+2020-1021T23:48:41Z
+
+Send
+
+ETH
+
+0.12943303
+
+390.96
+
+2020-1116T14:59:09Z
+
+Buy
+
+ETH
+
+0.42656914
+
+461.85
+
+$197.01
+
+$200.00
+
+Bought 0.42656914 ETH for $200.00 USD
+
+2020-1212T21:44:46Z
+
+Buy
+
+ETH
+
+0.34395426
+
+572.78
+
+$197.01
+
+$200.00
+
+Bought 0.34395426 ETH for $200.00 USD
+
+2020-1215T05:14:38Z
+
+Buy
+
+ETH
+
+0.33624331
+
+585.92
+
+$197.01
+
+$200.00
+
+Bought 0.33624331 ETH for $200.00 USD
+
+2020-1224T04:37:56Z
+
+Buy
+
+ETH
+
+0.34080294
+
+578.08
+
+$197.01
+
+$200.00
+
+Bought 0.34080294 ETH for $200.00 USD
+
+Sent 0.04364641 ETH to
+0xe46bf34e86f2f8a7c2000d021BAcf989fa45F896
+
+$48.01
+
+$50.00
+
+Bought 0.12943303 ETH for $50.00 USD
+
+Sent 0.12943303 ETH to
+0xe46bf34e86f2f8a7c2000d021BAcf989fa45F896
+
+Page 2/7
+
+Coinbase, Inc.
+
+100 Pine Street, Suite 1250 San Francisco, CA 94111
+
++1 888 908-7930
+
+support.coinbase.com
+
+Timestamp
+
+Transaction
+Type
+
+Asset
+
+Quantity
+Transacted
+
+USD Spot Price at
+Transaction
+
+Subtotal Total (inclusive of Notes
+fees)
+
+2020-1230T04:07:13Z
+
+Buy
+
+ETH
+
+0.09734233
+
+739.76
+
+$72.01
+
+2021-0107T22:38:33Z
+
+Sell
+
+ETH
+
+1.54491198
+
+1253.12
+
+$1,935.96 $1,907.11
+
+Sold 1.54491198 ETH for $1,907.11 USD
+
+2021-0110T03:03:53Z
+
+Buy
+
+ETH
+
+0.12817661
+
+1341.98
+
+$172.01
+
+$175.00
+
+Bought 0.12817661 ETH for $175.00 USD
+
+2021-0111T06:45:06Z
+
+Buy
+
+ETH
+
+0.18709466
+
+1053.00
+
+$197.01
+
+$200.00
+
+Bought 0.18709466 ETH for $200.00 USD
+
+2021-01-11T17:14:19Z Buy
+
+ETH
+
+0.210346
+
+936.60
+
+$197.01
+
+$200.00
+
+Bought 0.210346 ETH for $200.00 USD
+
+2020-0621T03:24:36Z
+
+Buy
+
+LTC
+
+4.50332761
+
+43.75
+
+$197.01
+
+$200.00
+
+Bought 4.50332761 LTC for $200.00 USD
+
+2020-0707T02:33:31Z
+
+Sell
+
+LTC
+
+4.50332761
+
+43.45
+
+$195.68
+
+$192.69
+
+Sold 4.50332761 LTC for $192.69 USD
+
+2020-1221T15:03:17Z
+
+Buy
+
+XRP
+
+367.716847
+
+0.535800
+
+$197.01
+
+$200.00
+
+Bought 367.716847 XRP for $200.00 USD
+
+2020-1224T04:37:08Z
+
+Buy
+
+XRP
+
+722.025233
+
+0.272900
+
+$197.01
+
+$200.00
+
+Bought 722.025233 XRP for $200.00 USD
+
+2020-1229T05:44:11Z
+
+Sell
+
+XRP
+
+1089.74208
+
+0.224200
+
+$244.29
+
+$240.65
+
+Sold 1,089.74208 XRP for $240.65 USD
+
+2020-1209T03:46:26Z
+
+Coinbase Earn XLM
+
+13.295132
+
+0.150000
+
+$1.99
+
+$1.99
+
+Received 13.295132 XLM from Coinbase Earn
+
+2020-1209T03:46:45Z
+
+Coinbase Earn XLM
+
+13.295132
+
+0.150000
+
+$1.99
+
+$1.99
+
+Received 13.295132 XLM from Coinbase Earn
+
+$75.00
+
+Bought 0.09734233 ETH for $75.00 USD
+
+Page 3/7
+
+Coinbase, Inc.
+
+Timestamp
+
+Transaction
+Type
+
+2020-1209T03:47:10Z
+
+Asset
+
+100 Pine Street, Suite 1250 San Francisco, CA 94111
+
++1 888 908-7930
+
+support.coinbase.com
+
+Quantity
+Transacted
+
+USD Spot Price at
+Transaction
+
+Subtotal Total (inclusive of Notes
+fees)
+
+Coinbase Earn XLM
+
+13.2980492
+
+0.150000
+
+$1.99
+
+$1.99
+
+Received 13.2980492 XLM from Coinbase Earn
+
+2020-1209T03:47:38Z
+
+Coinbase Earn XLM
+
+13.3067199
+
+0.150000
+
+$2.00
+
+$2.00
+
+Received 13.3067199 XLM from Coinbase Earn
+
+2020-1209T03:48:00Z
+
+Coinbase Earn XLM
+
+13.3067199
+
+0.150000
+
+$2.00
+
+$2.00
+
+Received 13.3067199 XLM from Coinbase Earn
+
+2020-1229T05:45:32Z
+
+Sell
+
+66.501753
+
+0.138600
+
+$9.22
+
+$8.23
+
+Sold 66.501753 XLM for $8.23 USD
+
+2020-0614T14:16:14Z
+
+Coinbase Earn EOS
+
+0.7797
+
+2.56
+
+$2.00
+
+$2.00
+
+Received 0.7797 EOS from Coinbase Earn
+
+2020-0614T14:16:47Z
+
+Coinbase Earn EOS
+
+0.7797
+
+2.56
+
+$2.00
+
+$2.00
+
+Received 0.7797 EOS from Coinbase Earn
+
+2020-0614T14:17:16Z
+
+Coinbase Earn EOS
+
+0.7797
+
+2.56
+
+$2.00
+
+$2.00
+
+Received 0.7797 EOS from Coinbase Earn
+
+2020-0614T14:18:45Z
+
+Coinbase Earn EOS
+
+0.7797
+
+2.56
+
+$2.00
+
+$2.00
+
+Received 0.7797 EOS from Coinbase Earn
+
+2020-0614T14:19:23Z
+
+Coinbase Earn EOS
+
+0.7797
+
+2.56
+
+$2.00
+
+$2.00
+
+Received 0.7797 EOS from Coinbase Earn
+
+2020-1229T05:44:49Z
+
+Sell
+
+EOS
+
+3.8985
+
+2.63
+
+$10.24
+
+$8.75
+
+Sold 3.8985 EOS for $8.75 USD
+
+2020-1108T19:19:33Z
+
+Buy
+
+XTZ
+
+45.775768
+
+2.12
+
+$97.01
+
+$100.00
+
+Bought 45.775768 XTZ for $100.00 USD
+
+XLM
+
+Page 4/7
+
+Coinbase, Inc.
+
+100 Pine Street, Suite 1250 San Francisco, CA 94111
+
++1 888 908-7930
+
+support.coinbase.com
+
+Timestamp
+
+Transaction
+Type
+
+Asset
+
+Quantity
+Transacted
+
+USD Spot Price at
+Transaction
+
+Subtotal Total (inclusive of Notes
+fees)
+
+2020-1113T19:55:39Z
+
+Buy
+
+XTZ
+
+45.005299
+
+2.16
+
+$97.01
+
+$100.00
+
+Bought 45.005299 XTZ for $100.00 USD
+
+2020-1207T13:09:19Z
+
+Buy
+
+XTZ
+
+106.248126
+
+2.32
+
+$246.33
+
+$250.00
+
+Bought 106.248126 XTZ for $250.00 USD
+
+2020-1211T02:31:34Z
+
+Buy
+
+XTZ
+
+94.83327
+
+2.08
+
+$197.01
+
+$200.00
+
+Bought 94.83327 XTZ for $200.00 USD
+
+2020-1217T19:38:23Z
+
+Rewards
+Income
+
+XTZ
+
+0.015987
+
+2.38
+
+$0.04
+
+$0.04
+
+Received 0.015987 XTZ from Coinbase Rewards
+
+2020-1220T21:16:51Z
+
+Rewards
+Income
+
+XTZ
+
+0.016169
+
+2.30
+
+$0.04
+
+$0.04
+
+Received 0.016169 XTZ from Coinbase Rewards
+
+2020-1223T21:52:11Z
+
+Rewards
+Income
+
+XTZ
+
+0.032072
+
+1.97
+
+$0.06
+
+$0.06
+
+Received 0.032072 XTZ from Coinbase Rewards
+
+2020-1224T04:36:34Z
+
+Buy
+
+XTZ
+
+106.723568
+
+1.85
+
+$197.01
+
+$200.00
+
+Bought 106.723568 XTZ for $200.00 USD
+
+2020-1226T21:16:53Z
+
+Rewards
+Income
+
+XTZ
+
+0.032909
+
+2.02
+
+$0.07
+
+$0.07
+
+Received 0.032909 XTZ from Coinbase Rewards
+
+2020-1228T20:20:37Z
+
+Rewards
+Income
+
+XTZ
+
+0.031724
+
+2.18
+
+$0.07
+
+$0.07
+
+Received 0.031724 XTZ from Coinbase Rewards
+
+2020-1231T22:25:16Z
+
+Rewards
+Income
+
+XTZ
+
+0.032696
+
+2.00
+
+$0.07
+
+$0.07
+
+Received 0.032696 XTZ from Coinbase Rewards
+
+2021-0101T03:26:36Z
+
+Sell
+
+XTZ
+
+398.747588
+
+2.07
+
+$824.06
+
+$811.78
+
+Sold 398.747588 XTZ for $811.78 USD
+
+2021-0103T20:54:20Z
+
+Rewards
+Income
+
+XTZ
+
+0.030704
+
+2.13
+
+$0.07
+
+$0.07
+
+Received 0.030704 XTZ from Coinbase Rewards
+
+Page 5/7
+
+Coinbase, Inc.
+
+100 Pine Street, Suite 1250 San Francisco, CA 94111
+
++1 888 908-7930
+
+support.coinbase.com
+
+Timestamp
+
+Transaction
+Type
+
+Asset
+
+Quantity
+Transacted
+
+USD Spot Price at
+Transaction
+
+Subtotal Total (inclusive of Notes
+fees)
+
+2021-0106T23:00:09Z
+
+Rewards
+Income
+
+XTZ
+
+0.032512
+
+2.61
+
+$0.08
+
+$0.08
+
+Received 0.032512 XTZ from Coinbase Rewards
+
+2021-0109T20:36:26Z
+
+Rewards
+Income
+
+XTZ
+
+0.03224
+
+2.64
+
+$0.09
+
+$0.09
+
+Received 0.03224 XTZ from Coinbase Rewards
+
+2021-0113T10:24:48Z
+
+Rewards
+Income
+
+XTZ
+
+0.031486
+
+2.37
+
+$0.07
+
+$0.07
+
+Received 0.031486 XTZ from Coinbase Rewards
+
+2020-1209T03:45:09Z
+
+Coinbase Earn COMP 0.01900659
+
+157.42
+
+$2.99
+
+$2.99
+
+Received 0.01900659 COMP from Coinbase Earn
+
+2020-1209T03:45:22Z
+
+Coinbase Earn COMP 0.01900659
+
+157.42
+
+$2.99
+
+$2.99
+
+Received 0.01900659 COMP from Coinbase Earn
+
+2020-1209T03:45:32Z
+
+Coinbase Earn COMP 0.01900659
+
+157.42
+
+$2.99
+
+$2.99
+
+Received 0.01900659 COMP from Coinbase Earn
+
+2020-1229T05:47:01Z
+
+Sell
+
+135.04
+
+$7.70
+
+$6.71
+
+Sold 0.05701977 COMP for $6.71 USD
+
+2020-1209T03:44:14Z
+
+Coinbase Earn BAND
+
+0.15428051
+
+6.47
+
+$1.00
+
+$1.00
+
+Received 0.15428051 BAND from Coinbase Earn
+
+2020-1209T03:44:30Z
+
+Coinbase Earn BAND
+
+0.15428051
+
+6.47
+
+$1.00
+
+$1.00
+
+Received 0.15428051 BAND from Coinbase Earn
+
+2020-1209T03:44:46Z
+
+Coinbase Earn BAND
+
+0.15430908
+
+6.47
+
+$1.00
+
+$1.00
+
+Received 0.15430908 BAND from Coinbase Earn
+
+COMP 0.05701977
+
+Page 6/7
+
+Coinbase, Inc.
+
+100 Pine Street, Suite 1250 San Francisco, CA 94111
+
++1 888 908-7930
+
+Timestamp
+
+Transaction
+Type
+
+Asset
+
+Quantity
+Transacted
+
+USD Spot Price at
+Transaction
+
+Subtotal Total (inclusive of Notes
+fees)
+
+2020-1229T05:46:22Z
+
+Sell
+
+BAND
+
+0.4628701
+
+5.68
+
+$2.63
+
+$1.64
+
+support.coinbase.com
+
+Sold 0.4628701 BAND for $1.64 USD
+
+Page 7/7
+
