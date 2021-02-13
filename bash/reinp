@@ -45,5 +45,5 @@ TIMESTAMPS=$($PDFCMD "$PDF" - | \
 # echo "$RANGE"
 # printf "${TIMESTAMPS[0]}\n"
 
-
+# pdftotext -layout -nopgbrk cb_input.pdf - | rg -U '^\d{4}-\d{2}'
 # $(generate list of files) | while read f; do rg pattern "$f"; done
