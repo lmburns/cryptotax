@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+### Inserts into mysql database
+# =============================
+# cat $FILE | while read testline spaceline; do
+#   echo "INSERT INTO cryptotable(testline,spaceline) VALUES ('$testline', '$spaceline');"
+# done | mysql -uroot -pfreakkkk crypto;

@@ -1,1 +1,1 @@
-(Coinbase,?\sInc|\+1\s888\s908-7930|100\sPine\sStreet,\sSuite\s1250\sSan\sFrancisco,\sCA\s94111|support.coinbase.com|Page\s\d*/\d*|Timestamp|Transaction|Type|Asset|Quantity|Transacted|USD\sSpot\sPrice\sat|Subtotal|Total|\(inclusive\sof|Notes|fees\)|Date\srange|Filter|Customer)
+(Coinbase,?\sInc\.|\+1\s888\s908-7930|100\sPine\sStreet,\sSuite\s1250\sSan\sFrancisco,\sCA\s94111|support.coinbase.com|Page\s\d*/\d*|Timestamp|Transaction|Type|Asset|Quantity|Transacted|USD\sSpot\sPrice\sat|Subtotal|Total|\(inclusive\sof|Notes|fees\)|Date\srange|Filter|Customer)
