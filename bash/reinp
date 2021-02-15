@@ -29,5 +29,26 @@ TIMESTAMPS=$(echo "${OVFORMAT}" \
   | rg -o '^\d{1,4}-\d{1,4}-?\d*T\d{2}:\d{2}:\d{2}Z$' \
   | sed -e 's/ /\n/g')
 
-echo "$RANGE"
+BUYS=$(echo "${OVFORMAT}" \
+  | rg --color=never 'Buy' \
+  | sed -E 's/Bought.+$//g;s/^[0-9].+Z //g')
+
+BUYS_COUNT=$(echo "${BUYS}" \
+  | sed -n '$=')
+
+SELLS=$(echo "${OVFORMAT}" \
+  | rg --color=never 'Sell' \
+  | sed -E 's/Sold.+$//g')
+
+SELLS_COUNT=$(echo "${OVFORMAT}" \
+  | sed -n '$=')
+
+SENTS=$(echo "${OVFORMAT}" \
+  | rg --color=never 'Send' \
+  | sed -E 's/Sent.+$//g')
+
+SENTS_COUNT=$(echo "${OVFORMAT}" \
+  | sed -n '$=')
+
+echo "$SENTS"
 # printf "${TIMESTAMPS[0]}\n"
