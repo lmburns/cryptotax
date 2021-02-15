@@ -15,6 +15,7 @@ OVFORMAT=$(pdftotext -raw -nopgbrk "$PDF" - \
   | sed '/^ *$/d' \
   | sed -e :a -e '/\-$/N; s/\-\n//; ta')
 
+# General attributes
 OWNER=$($PDFCMD "$PDF" - \
   | rg -o "Transaction report for \w+ \w+" \
   | sed -e 's/Transaction report for //g')
@@ -29,6 +30,7 @@ TIMESTAMPS=$(echo "${OVFORMAT}" \
   | rg -o '^\d{1,4}-\d{1,4}-?\d*T\d{2}:\d{2}:\d{2}Z$' \
   | sed -e 's/ /\n/g')
 
+# Categories
 BUYS=$(echo "${OVFORMAT}" \
   | rg --color=never 'Buy' \
   | sed -E 's/Bought.+$//g;s/^[0-9].+Z //g')
@@ -50,5 +52,44 @@ SENTS=$(echo "${OVFORMAT}" \
 SENTS_COUNT=$(echo "${OVFORMAT}" \
   | sed -n '$=')
 
-echo "$SENTS"
+# Cryptos
+COINS=$(printf "${BUYS}\n${SELLS}\n" \
+  | awk '{print $2}' \
+  | uniq)
+
+BUYS_TOT=$(printf "${BUYS}\n" \
+  | awk '{print $NF}' \
+  | sed 's/\$//g' \
+  | awk '{sum+=$1;} END{print sum;}')
+
+SELLS_TOT=$(printf "${SELLS}\n" \
+  | awk '{print $NF}' \
+  | sed 's/\$//g' \
+  | awk '{sum+=$1;} END{print sum;}')
+
+# Add sells, subtract buys?
+
+# Awk - Piping shorter only for Sell
+# awk '{gsub(/\$/, "")} {print $1, $NF};' \
+#   | awk '$1 ~ /Sell/ {s+=$2;}END{print s;}'
+
+# Awk - Single if statment on Sell
+# | awk '{gsub(/\$/, "")} {
+#     if ($1 ~ /Sell/) {c+=$NF;}}
+#       END{print c}'
+
+# Awk - Gets both Sell and Buy count
+printf "$BUYS\n$SELLS\n" \
+  | awk '{
+      if ($1 ~ /Sell/) {
+        gsub(/\$/, "")
+        {s+=$NF;}
+      } else if ($1 ~ /Buy/) {
+        gsub(/\$/, "")
+        {b+=$NF}
+      }
+    } END{print s, b}'
+
+# printf "${SELLS_TOT}\n"
+# printf "$BUYS\n$SELLS\n"
 # printf "${TIMESTAMPS[0]}\n"
