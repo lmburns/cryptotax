@@ -19,3 +19,9 @@
 
 # Notes
 - Not necessary
+
+------------------------------------------------------------
+
+[ID][documentID][date][type][asset][quantity][USD spot price (cost basis)][subtotal][total][amount left]
+
+amount left = quanity (amount left is a column that will be manipulated when we calculate cost basis)

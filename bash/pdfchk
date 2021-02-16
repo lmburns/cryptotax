@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# Check if PDF is in folder
+
 CHECK="${1}"
 FILETYPE=".pdf"
 CMD="fd ${FILETYPE} ${CHECK}"
