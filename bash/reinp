@@ -4,7 +4,7 @@
 # https://www.regular-expressions.info/posixbrackets.html       # posix regex
 # https://staff.washington.edu/weller/grep.html                 # grep cheatsheet
 
-PDF="$HOME/JupyterNotebook/projects/github/cryptotax/bash/cb_input.pdf"
+PDF="../pdfs/cb_input.pdf"
 
 #### OVERALL FORMAT
 # ----------------
