@@ -13,7 +13,12 @@ PDFCMD="pdftotext -nopgbrk"
 OVFORMAT=$(pdftotext -raw -nopgbrk "$PDF" - \
   | sd $(cat replace) '' \
   | sed '/^ *$/d' \
-  | sed -e :a -e '/\-$/N; s/\-\n//; ta')
+  | sed -e :a -e '/\-$/N; s/\-\n/\-/; ta' \
+  | sed -e :a -e '/Z$/N; s/Z\n/Z /; ta' \
+  | sd '(Sold|Bought|Received).+$' '' \
+  | sed '/Send/d')
+
+echo "${OVFORMAT}"
 
 # General attributes
 OWNER=$($PDFCMD "$PDF" - \
@@ -67,28 +72,32 @@ SELLS_TOT=$(printf "${SELLS}\n" \
   | sed 's/\$//g' \
   | awk '{sum+=$1;} END{print sum;}')
 
+
 # Add sells, subtract buys?
+
 
 # Awk - Piping shorter only for Sell
 # awk '{gsub(/\$/, "")} {print $1, $NF};' \
 #   | awk '$1 ~ /Sell/ {s+=$2;}END{print s;}'
+
 
 # Awk - Single if statment on Sell
 # | awk '{gsub(/\$/, "")} {
 #     if ($1 ~ /Sell/) {c+=$NF;}}
 #       END{print c}'
 
-# Awk - Gets both Sell and Buy count
-printf "$BUYS\n$SELLS\n" \
-  | awk '{
-      if ($1 ~ /Sell/) {
-        gsub(/\$/, "")
-        {s+=$NF;}
-      } else if ($1 ~ /Buy/) {
-        gsub(/\$/, "")
-        {b+=$NF}
-      }
-    } END{print s, b}'
+
+# # Awk - Gets both Sell and Buy count
+# printf "$BUYS\n$SELLS\n" \
+#   | awk '{
+#       if ($1 ~ /Sell/) {
+#         gsub(/\$/, "")
+#         {s+=$NF;}
+#       } else if ($1 ~ /Buy/) {
+#         gsub(/\$/, "")
+#         {b+=$NF}
+#       }
+#     } END{print s, b}'
 
 # printf "${SELLS_TOT}\n"
 # printf "$BUYS\n$SELLS\n"
