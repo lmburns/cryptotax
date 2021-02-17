@@ -1,27 +1,35 @@
-# Transaction Type
+### Coinbase
+**Transaction Type**
 - Buy / Send / Sell, Coinbase Earn, Rewards Income
 
-# Asset
+**Asset**
 - Crypto
 
-
-# Quantity Transacted
+**Quantity Transacted**
 - Amount in crypto
 
-# USD Spot Price at Transaction
+**USD Spot Price at Transaction**
 - Amount in USD
 
-# Subtotal
+**Subtotal**
 - Only for buy and sell
 - Total raw
 
-# Total Inclusive with Fees
+**Total Inclusive with Fees**
 - Total with fees
 
-# Notes
+**Notes**
 - Not necessary
 
-------------------------------------------------------------
+========================================================================
+
+### Process
+1. CSV > TXT
+2. TXT > SQL
+3. User confirms/edits SQL data in browser
+4. SQL > PDF
+
+### SQL Database
 
 [ID][documentID][date][type][asset][quantity][USD spot price (cost basis)][subtotal][total][amount left]
 

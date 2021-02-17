@@ -4,7 +4,7 @@
 # https://www.regular-expressions.info/posixbrackets.html       # posix regex
 # https://staff.washington.edu/weller/grep.html                 # grep cheatsheet
 
-PDF="../pdfs/cb_input.pdf"
+PDF="../inputs/cb_input.pdf"
 
 #### OVERALL FORMAT
 # ----------------
@@ -17,7 +17,8 @@ OVFORMAT=$(pdftotext -raw -nopgbrk "$PDF" - \
   | sed -e :a -e '/Z$/N; s/Z\n/Z /; ta' \
   | sd '(Sold|Bought|Received).+$' '' \
   | sed '/Send/d' \
-  | sed 's/Coinbase Earn/Coinbase-Earn/g')
+  | sed 's/Coinbase Earn/Coinbase-Earn/g' \
+  | sed -e 's/^/Coinbase /')
 
 echo "${OVFORMAT}"
 
