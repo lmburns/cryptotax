@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+CSV="../inputs/coinbase.csv"
+
+TSV=$(csvformat -T "$CSV" \
+  | sd $(cat replace) '' \
+  | sed '/^ *$/d' \
+  | sed -e :a -e '/\-$/N; s/\-\n/\-/; ta' \
+  | sed -e :a -e '/Z$/N; s/Z\n/Z /; ta' \
+  | sd '(Sold|Bought|Received).+$' '' \
+  | sed '/Send/d' \
+  | sed 's/Coinbase Earn/Coinbase-Earn/g' \
+  | sed -e 's/^/Coinbase /')
+
+echo "${TSV}"
+
+# printf "$BUYS\n$SELLS\n" \
+#   | awk '{
+#       if ($1 ~ /Sell/) {
+#         gsub(/\$/, "")
+#         {s+=$NF;}
+#       } else if ($1 ~ /Buy/) {
+#         gsub(/\$/, "")
+#         {b+=$NF}
+#       }
+#     } END{print s, b}'
