@@ -1,5 +1,7 @@
 ### Exchanges
 
+**Add support for cash app**
+
 1. Binance
 2. Coinbase
 3. Coinsbit

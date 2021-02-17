@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+
+CSV="../inputs/gemini.csv"
+
+csvformat -T $CSV \
+  | awk '/Event/ {$2==$3; NF--} 1'
+
+# TSV=$(csvformat -T $CSV \
+#   | awk -v OFS='\t' '
+#   NR==1{
+#     for (i=1;i<=NF;i++)
+#       if ($i=='Event\sID') {
+#         n=i-1
+#         m=NF-(i==NF)
+#       }
+#   }
+
+#   {
+#     for (i=1;i<=NF;i+=1(i==n))
+#       printf "%s%s",$i,i==m?ORS:OFS
+#   }
+#   ')
+
+# printf "$BUYS\n$SELLS\n" \
+#   | awk '{
+#       if ($1 ~ /Sell/) {
+#         gsub(/\$/, "")
+#         {s+=$NF;}
+#       } else if ($1 ~ /Buy/) {
+#         gsub(/\$/, "")
+#         {b+=$NF}
+#       }
+#     } END{print s, b}'

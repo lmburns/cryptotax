@@ -10,6 +10,8 @@ PDF="../inputs/cb_input.pdf"
 # ----------------
 PDFCMD="pdftotext -nopgbrk"
 
+# awk -v RS='-\n' ORS='1'
+
 OVFORMAT=$(pdftotext -raw -nopgbrk "$PDF" - \
   | sd $(cat replace) '' \
   | sed '/^ *$/d' \
