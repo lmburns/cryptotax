@@ -15,11 +15,13 @@ PDFCMD="pdftotext -nopgbrk"
 OVFORMAT=$(pdftotext -raw -nopgbrk "$PDF" - \
   | sd $(cat replace) '' \
   | sed '/^ *$/d' \
+  | sed -e :a -e '/^Rewards$/N; s/Rewards\n/Rewards /; ta' \
   | sed -e :a -e '/\-$/N; s/\-\n/\-/; ta' \
   | sed -e :a -e '/Z$/N; s/Z\n/Z /; ta' \
+  | sed -e :a -e '/Income$/N; s/Income\n/Income /; ta' \
   | sd '(Sold|Bought|Received).+$' '' \
   | sed '/Send/d' \
-  | sed 's/Coinbase Earn/Coinbase-Earn/g' \
+  | sed 's/Coinbase Earn/Coinbase-Earn/g; s/Rewards Income/Rewards-Income/g' \
   | sed -e 's/^/Coinbase /')
 
 echo "${OVFORMAT}"
