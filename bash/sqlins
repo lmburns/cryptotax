@@ -32,8 +32,11 @@ cat $FILE | while read \
   total \
   amountLeft \
   ; do
-  echo "INSERT INTO "${TABLE}"(documentID, platform, date, type, asset, quantity, costBasis, subtotal, total, amountLeft) VALUES ($documentID, '$platform', STR_TO_DATE('$date', '%Y-%m-%dT%H:%i:%sZ'), '$type', '$asset', '$quantity', '$costBasis', '$subtotal', '$total', '$amountLeft');"
-done | mysql -u"${DB_USER}" -p"${DB_PASSWD}" "${DB_NAME}";
+  cat <<-_EOF
+  INSERT INTO ${TABLE}(documentID, platform, date, type, asset, quantity, costBasis, subtotal, total, amountLeft)
+  VALUES ($documentID, '$platform', STR_TO_DATE('$date', '%Y-%m-%dT%H:%i:%sZ'), '$type', '$asset', '$quantity', '$costBasis', '$subtotal', '$total', '$amountLeft');
+_EOF
+  done | mysql -u"${DB_USER}" -p"${DB_PASSWD}" "${DB_NAME}";
 
 
 # Testing another way

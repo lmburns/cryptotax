@@ -87,7 +87,7 @@ TODO: Use `exchange` as a category
 ```plain
 | [ID]      | [fname]          | [email]        | [pass]    | [signedUp] |
 | :-------- | :--------------- | :------------- | :-------- | :--------  |
-| lmburns   | 2020coinbase.csv | burnsac@me.com | ********  | 2021-02-17 |
+| 1         | 2020coinbase.csv | burnsac@me.com | ********  | 2021-02-17 |
 ```
 
 
@@ -98,3 +98,4 @@ TODO: Use `exchange` as a category
 | [ID]    | [documentID] | [date]     | [type]  | [asset] | [quantity] | [costBasis] | [subtotal] | [total]  | [amountLeft] |
 | :------ | :----------  | :--------- | :------ | :------ | :--------- | :---------- | :--------- | :------- | :----------- |
 | 1       | 00001        | 2021-02-18 | Buy     | BTC     | 0.523276   | 9166.63     | 18.51      | 20.00    | 0.00201928   |
+```
