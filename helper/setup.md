@@ -1,53 +1,3 @@
-### Coinbase raw
-- **Date**
-  - Date (obviously)
-- **Transaction Type**
-  - Buy / Send / Sell, Coinbase Earn, Rewards Income
-- **Asset**
-  - Crypto
-- **Quantity Transacted**
-  - Amount in crypto
-- **USD Spot Price at Transaction**
-  - Amount in USD
-- **Subtotal**
-  - Only for buy and sell
-  - Total raw
-- **Total Inclusive with Fees**
-  - Total with fees
-- **Notes**
-  - Unnecessary
-
-
-=============================================================
-
-### Gemini raw
-- **Event ID**
-- **Event Date**
-- **Event Time**
-  - Unnecessary
-- **Event Millisecond**
-  - Completely unnecessary
-- **Order ID**
-  - Unnecessary
-- **Execution Options**
-  - Unnecessary
-- **Event Type**
-  - Unnecessary
-- **Symbol**
-- **Order Type**
-- **Side**
-  - Buy / Sell
-- **Limit Price (USD)**
-- **Original Quantity**
-- **Gross National Value**
-  - Unnecessary
-- **Fill Price (USD)**
-- **Fill Quantity (BTC)**
-- **Quantity Remaining**
-- **Avg Price (USD)**
-
-=============================================================
-
 ### Process
 1. CSV > TXT
 2. TXT > SQL
@@ -56,21 +6,7 @@
 
 ### SQL Database
 
-- [ID]
-- [documentID]
-- [platform]
-- [date]
-- [type]
-- [asset]
-- [quantity]
-- [costBasis]
-- [subtotal]
-- [total]
-- [amountLeft]
-  - quanity
-  - manipulated when we calculate cost basis
-
-### Table 1: Uploads
+### Table 1: mega
 - This will be a master table for every file uploaded. We can see when it was uploaded, who uploaded it, the original filename, and the exchange(e.g., Coinbase)
 
 TODO: Use `exchange` as a category
@@ -81,7 +17,7 @@ TODO: Use `exchange` as a category
 | 00001        | lmburns | 2020coinbase.csv  | Coinbase   |
 ```
 
-### Table 2: Users
+### Table 2: users
 - This is for logging in and payment - First/Last name, email/pass, and date the account was created, with an auto-increment ID
 
 ```plain
@@ -91,7 +27,7 @@ TODO: Use `exchange` as a category
 ```
 
 
-### Table 3: tthudium
+### Table 3: username
 - This is my own personal table (assume I'm a user) which has all of my transactions. If you want to see where one transaction came from, you can look at the DocumentID column and use that to see the specific file it got the data from. It has all the other data needed to do longterm shortterm calculations
 
 ```plain
