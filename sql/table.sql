@@ -18,7 +18,7 @@ CREATE TABLE crypto.username (
   subtotal DECIMAL(8,2) NOT NULL,
   total DECIMAL(8,2) NOT NULL,
   amount_left DECIMAL(8,2) NOT NULL
-)
+);
 
 -- all users table
 CREATE TABLE crypto.users (
@@ -28,7 +28,7 @@ CREATE TABLE crypto.users (
   pass VARCHAR(255) NOT NULL,
   signed_up DATETIME NOT NULL,
   FOREIGN KEY(id) REFERENCES mega(user)
-)
+);
 
 -- master table with exchange
 CREATE TABLE crypto.mega (
@@ -40,7 +40,7 @@ CREATE TABLE crypto.mega (
   FOREIGN KEY(fname) REFERENCES users(fname),
   FOREIGN KEY(exchange) REFERENCES username(exchange),
   PRIMARY KEY(user, document_id)
-)
+);
 
 -- users.id -> mega.user
 -- mega.docid -> username.docid
