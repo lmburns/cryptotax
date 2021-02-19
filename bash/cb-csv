@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# organizes data from a coinbase csv file
+
 CSV="../inputs/coinbase.csv"
 
 TSV=$(csvformat -T "$CSV" \

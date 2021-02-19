@@ -1,4 +1,4 @@
-### Coinbase
+### Coinbase raw
 - **Date**
   - Date (obviously)
 - **Transaction Type**
@@ -18,9 +18,9 @@
   - Unnecessary
 
 
-========================================================================
+=============================================================
 
-### Gemini
+### Gemini raw
 - **Event ID**
 - **Event Date**
 - **Event Time**
@@ -46,19 +46,27 @@
 - **Quantity Remaining**
 - **Avg Price (USD)**
 
-========================================================================
+=============================================================
 
-
-### Process {{{
+### Process
 1. CSV > TXT
 2. TXT > SQL
 3. User confirms/edits SQL data in browser
 4. SQL > PDF
-#}}}
 
 ### SQL Database
 
-[ID][documentID][date][type][asset][quantity][USD spot price (cost basis)][subtotal][total][amount left]
+- [ID]
+- [documentID]
+- [platform]
+- [date]
+- [type]
+- [asset]
+- [quantity]
+- [USD spot price (cost basis)]
+- [subtotal]
+- [total]
+- [amount left]
 
 **amount left**
 - quanity
