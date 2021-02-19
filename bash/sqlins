@@ -1,7 +1,43 @@
 #!/usr/bin/env bash
 
-### Inserts into mysql database
-# =============================
-# cat $FILE | while read testline spaceline; do
-#   echo "INSERT INTO cryptotable(testline,spaceline) VALUES ('$testline', '$spaceline');"
-# done | mysql -uroot -pfreakkkk crypto;
+# inserts data into sql table
+
+# [ID]
+# [documentID]
+# [platform]
+# [date]
+# [type]
+# [asset]
+# [quantity]
+# [cost basis]
+# [subtotal]
+# [total]
+# [amount left]
+
+DB_USER="root"
+DB_PASSWD="freakkkk"
+DB_NAME="crypto"
+TABLE="cryptoUsers"
+FILE="test"
+
+cat $FILE | while read \
+  documentID \
+  platform \
+  date \
+  type \
+  asset \
+  quantity \
+  costBasis \
+  subtotal \
+  total \
+  amountLeft \
+  ; do
+  echo "INSERT INTO "${TABLE}"(documentID, platform, date, type, asset, quantity, costBasis, subtotal, total, amountLeft) VALUES ($documentID, '$platform', STR_TO_DATE('$date', '%Y-%m-%dT%H:%i:%sZ'), '$type', '$asset', '$quantity', '$costBasis', '$subtotal', '$total', '$amountLeft');"
+done | mysql -u"${DB_USER}" -p"${DB_PASSWD}" "${DB_NAME}";
+
+
+# Testing another way
+
+# mysql --user=$DB_USER --password=$DB_PASSWD $DB_NAME << EOF
+# INSERT INTO $TABLE (id, documentID, platform, date, type, asset, quantity, costBasis, subtotal, total, amountLeft) VALUES ("$id", "$documentID", "$platform", "$date", "$type", "$asset", "$quantity", "$costBasis", "$subtotal", "$total", "$amountLeft");
+# EOF

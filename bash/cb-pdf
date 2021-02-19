@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-# https://www.cyberciti.biz/faq/grep-regular-expressions/
-# https://www.regular-expressions.info/posixbrackets.html       # posix regex
-# https://staff.washington.edu/weller/grep.html                 # grep cheatsheet
+# organizes data from a coinbase pdf file
 
 PDF="../inputs/cb_input.pdf"
 
-#### OVERALL FORMAT
-# ----------------
 PDFCMD="pdftotext -nopgbrk"
 
+# Incremental Number: awk 'BEGIN{OFS=" "; col1=1}{print col1,$0; col1+=1}'
+# Duplicate Quantity: awk '{print $0, $6}'
+# BTC Regex: (bc1|[13])[a-zA-HJ-NP-Z0-9]{25,39}$
+# Awk Command: join lines similar to sed -e :a -e ...
 # awk -v RS='-\n' ORS='1'
 
 OVFORMAT=$(pdftotext -raw -nopgbrk "$PDF" - \
@@ -91,7 +91,6 @@ SELLS_TOT=$(printf "${SELLS}\n" \
 # | awk '{gsub(/\$/, "")} {
 #     if ($1 ~ /Sell/) {c+=$NF;}}
 #       END{print c}'
-
 
 # # Awk - Gets both Sell and Buy count
 # printf "$BUYS\n$SELLS\n" \

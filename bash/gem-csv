@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+# organizes data from a gemini csv file
+
 CSV="../inputs/gemini.csv"
 
 csvformat -T $CSV \

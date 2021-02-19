@@ -14,15 +14,16 @@
   - file in folder = processing
 
 ```
-| Todo                          | Method       |
+| Todo                          | Done?        |
 | :===========================  | :=========== |
 | File input to website         |              |
 | File in folder recognition    |              |
-| Script to run clearing folder |              |
-| Reading PDF                   | pdftotext    |
+| Script to run clearing folder | yes          |
+| Reading PDF                   | for coinbase |
 | Sorting PDF / to SQL          |              |
 | Print back to website         |              |
-| Print to RSS                  |              |
+| Print to RSS? maybe IRS       |              |
+|                               |              |
 ```
 
 ```sh
