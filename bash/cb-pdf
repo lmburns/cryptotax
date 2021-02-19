@@ -19,7 +19,7 @@ OVFORMAT=$(pdftotext -raw -nopgbrk "$PDF" - \
   | sed -e :a -e '/\-$/N; s/\-\n/\-/; ta' \
   | sed -e :a -e '/Z$/N; s/Z\n/Z /; ta' \
   | sed -e :a -e '/Income$/N; s/Income\n/Income /; ta' \
-  | sd '(Sold|Bought|Received).+$' '' \
+  | sd '(Sold|Bought|Received|\$).+$' '' \
   | sed '/Send/d' \
   | sed 's/Coinbase Earn/Coinbase-Earn/g; s/Rewards Income/Rewards-Income/g' \
   | sed -e 's/^/Coinbase /')
