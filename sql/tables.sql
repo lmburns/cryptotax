@@ -1,7 +1,6 @@
 -- master table
 CREATE TABLE crypto.mega (
-  id INTEGER AUTO_INCREMENT PRIMARY KEY,
-  user_id INTEGER NOT NULL UNIQUE,
+  user_id INTEGER AUTO_INCREMENT PRIMARY KEY,
   email VARCHAR(255) NOT NULL,
   pass VARCHAR(255) NOT NULL,
   signed_up TIMESTAMP DEFAULT NOW()
@@ -14,13 +13,9 @@ CREATE TABLE crypto.mega (
 CREATE TABLE crypto.users (
   user_id INTEGER NOT NULL,
   doc_id INTEGER NOT NULL PRIMARY KEY,
-  fname VARCHAR(255) NOT NULL,
   exchange VARCHAR(255) NOT NULL,
-  FOREIGN KEY(user_id) REFERENCES mega(id)
+  FOREIGN KEY(user_id) REFERENCES mega(user_id)
 );
-
--- one line per document
--- one user can have several entries
 
 -- expanded documents table
 CREATE TABLE crypto.documents (
@@ -44,6 +39,11 @@ CREATE TABLE crypto.documents (
 
 -- trans_id to keep track of every line of every document
 -- amount_left used as integer for now (will be changed)
+/* 1 Coinbase 2020-05-21T22:27:28Z Buy BTC 0.00201928 9166.63 18.51 20.00 924 */
+
+
+-- one line per document
+-- one user can have several entries
 
 -- COMMENTS:
 -- no need for a table for each user
@@ -57,8 +57,8 @@ CREATE TABLE crypto.documents (
 -- TODO AT SOME POINT:
 -- change database and table names when going public
 -- password hasing algorithm (SHA256+)
--- method to create user_id = user_00000001
--- method to create trans_id = trans_000000001
+-- method to create user_id = 00000001 (integers)
+-- method to create trans_id = 000000001 (integers)
 
 -- QUESTIONS:
 -- unique filename to prevent clashes?
