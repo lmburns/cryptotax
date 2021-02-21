@@ -1,30 +1,30 @@
--- all users table
+-- master table
 CREATE TABLE crypto.mega (
   id INTEGER AUTO_INCREMENT PRIMARY KEY,
-  user_id INTEGER NOT NULL,
+  user_id INTEGER NOT NULL UNIQUE,
   email VARCHAR(255) NOT NULL,
   pass VARCHAR(255) NOT NULL,
   signed_up TIMESTAMP DEFAULT NOW()
 );
 
--- username will have several of repeating doc id lines
--- this will be first table to have data inserted
+-- first table to have data inserted
+-- one line, one user
 
--- master table
+-- all users & documents table
 CREATE TABLE crypto.users (
   user_id INTEGER NOT NULL,
-  doc_id INTEGER NOT NULL,
+  doc_id INTEGER NOT NULL PRIMARY KEY,
   fname VARCHAR(255) NOT NULL,
   exchange VARCHAR(255) NOT NULL,
-  FOREIGN KEY(user_id) REFERENCES mega(id),
-  PRIMARY KEY(user_id)
+  FOREIGN KEY(user_id) REFERENCES mega(id)
 );
 
--- not sure if id is needed
+-- one line per document
+-- one user can have several entries
 
--- individual user table
-CREATE TABLE crypto.username (
-  trans_id INTEGER AUTO_INCREMENT,
+-- expanded documents table
+CREATE TABLE crypto.documents (
+  trans_id INTEGER NOT NULL,
   user_id INTEGER NOT NULL,
   doc_id INTEGER NOT NULL,
   exchange VARCHAR(255) NOT NULL,
@@ -42,34 +42,26 @@ CREATE TABLE crypto.username (
   /* amount_left DECIMAL(8,2) NOT NULL */
 );
 
--- id here can be seen as transaction id since all will be unique
+-- trans_id to keep track of every line of every document
 -- amount_left used as integer for now (will be changed)
--- dynamically create table names
 
 -- COMMENTS:
--- Think that tables are fine they way they are, no need for a table for each user
--- No usernames here, account based on email
--- user_id is our way to track
+-- no need for a table for each user
+-- no usernames here, account based on email
+-- user_id or email is our way to track
 
 -- CONNECTED THROUGH ORIGINALLY:
 -- mega.doc_id -> username.doc_id
 -- users.user_id -> mega.user_id
 
 -- TODO AT SOME POINT:
--- categorical variables?
--- change database and table names when going public to prevent SQL injection
+-- change database and table names when going public
 -- password hasing algorithm (SHA256+)
+-- method to create user_id = user_00000001
+-- method to create trans_id = trans_000000001
 
 -- QUESTIONS:
--- link users and username || link mega back to users?
 -- unique filename to prevent clashes?
-
--- doc_id or user_id or both as primary key for mega?
--- mega -> username, have to figure out dynamic reference (1 user 1 table)
-
--- username vs userid?
--- add username to username table?
--- email not unique because users table will have multiple entries for one person?
 
 -- REFERENCE: tutorials/sql/ig-data-orig.sql to help get an idea of how we structure
 
