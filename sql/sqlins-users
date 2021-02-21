@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+
+# inserts data into sql table - table users
+
+DB_USER="root"
+DB_PASSWD="freakkkk"
+DB_NAME="crypto"
+TABLE="users"
+FILE="data/users-insert"
+
+cat $FILE | while read \
+  fname \
+  email \
+  pass \
+  signed_up \
+  ; do
+  cat <<-_EOF
+  INSERT INTO ${TABLE}(fname, email, pass, signed_up)
+  VALUES ($fname, '$email','$pass', '$signed_up');
+_EOF
+  done | mysql -u"${DB_USER}" -p"${DB_PASSWD}" "${DB_NAME}";
