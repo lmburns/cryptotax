@@ -42,3 +42,8 @@ sudo apt-get dselect-upgrade
 sudo apt-mark auto $(cat pkgs_auto.lst)
 sudo apt-mark manual $(cat pkgs_manual.lst)
 ```
+
+```sh
+# pdftotext
+sudo apt install poppler-utils
+```

@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+# inserts data into sql table - table username
+
+DB_USER="root"
+DB_PASSWD="freakkkk"
+DB_NAME="crypto"
+TABLE="username"
+FILE="data/username-insert"
+
+cat $FILE | while read \
+  doc_id \
+  exchange \
+  trans_date \
+  trans_type \
+  asset \
+  quantity \
+  cost_basis \
+  subtotal \
+  total \
+  amount_left \
+  ; do
+  cat <<-_EOF
+  INSERT INTO ${TABLE}(doc_id, exchange, trans_date, trans_type, asset, quantity, cost_basis, subtotal, total, amount_left)
+  VALUES ($doc_id, '$exchange', STR_TO_DATE('$trans_date', '%Y-%m-%dT%H:%i:%sZ'), '$trans_type', '$asset', '$quantity', '$cost_basis', '$subtotal', '$total', '$amount_left');
+_EOF
+  done | mysql -u"${DB_USER}" -p"${DB_PASSWD}" "${DB_NAME}";
+
+
+# Testing another way
+
+# mysql --user=$DB_USER --password=$DB_PASSWD $DB_NAME << EOF
+# INSERT INTO $TABLE (id, doc_id, exchange, trans_date, trans_type, asset, quantity, cost_basis, subtotal, total, amount_left) VALUES ("$id", "$doc_id", "$exchange", "$trans_date", "$trans_type", "$asset", "$quantity", "$cost_basis", "$subtotal", "$total", "$amount_left");
+# EOF
