@@ -7,7 +7,6 @@ CREATE TABLE crypto.mega (
   pass VARCHAR(255) NOT NULL,
   date_created TIMESTAMP DEFAULT NOW(),
   ip_addr VARCHAR(32) NOT NULL,
-  filesize DECIMAL(10,2) NOT NULL
 );
 
 -- first table to have data inserted
@@ -37,10 +36,10 @@ CREATE TABLE crypto.transactions(
 CREATE TABLE crypto.documents(
   id INTEGER AUTO_INCREMENT PRIMARY KEY,
   user_id INTEGER NOT NULL,
-  doc_id INTEGER NOT NULL,
-  filename VARCHAR(255) NOT NULL,
   exchange VARCHAR(255) NOT NULL,
-  date_uploaded TIMESTAMP DEFAULT NOW()
+  date_uploaded TIMESTAMP DEFAULT NOW(),
+  filename VARCHAR(255) NOT NULL,
+  filesize DECIMAL(10,2) NOT NULL
 );
 
 -- one line per document
