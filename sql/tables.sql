@@ -23,13 +23,14 @@ CREATE TABLE crypto.documents (
   subtotal DECIMAL(10,2),
   total DECIMAL(8,2),
   amount_left INTEGER,
+  /* amount_left DECIMAL(16, 10), */
   FOREIGN KEY(user_id) REFERENCES mega(user_id),
   PRIMARY KEY(doc_id)
-  /* amount_left DECIMAL(16,10) NOT NULL */
 );
 
 -- trans_id to keep track of every line of every document
 -- amount_left used as integer for now (will be changed)
+-- 1 Coinbase 2020-05-21T22:27:28Z Buy BTC 0.00201928 9166.63 18.51 20.00 924
 
 -- all users & documents table
 CREATE TABLE crypto.users (
@@ -45,21 +46,14 @@ CREATE TABLE crypto.users (
 -- one line per document
 -- one user can have several entries
 
-
--- COMMENTS:
--- no need for a table for each user
--- no usernames here, account based on email
--- user_id or email is our way to track
-
--- CONNECTED THROUGH ORIGINALLY:
--- mega.doc_id -> username.doc_id
--- users.user_id -> mega.user_id
+-- sync documents.exchange, users.exchange
 
 -- TODO AT SOME POINT:
 -- change database and table names when going public
 -- password hasing algorithm (SHA256+)
--- method to create user_id = 00000001 (integers)
 -- method to create trans_id = 000000001 (integers)
+-- ip
+-- filesize
 
 -- QUESTIONS:
 -- unique filename to prevent clashes?

@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
 
-# inserts data into sql table - table username
+# inserts data into sql table - table documents
 
 DB_USER="root"
 DB_PASSWD="freakkkk"
 DB_NAME="crypto"
-TABLE="username"
+TABLE="documents"
 FILE="data/documents-insert"
 
 cat $FILE | while read \
+  trans_id \
+  user_id \
   doc_id \
   exchange \
   trans_date \
@@ -21,8 +23,8 @@ cat $FILE | while read \
   amount_left \
   ; do
   cat <<-_EOF
-  INSERT INTO ${TABLE}(doc_id, exchange, trans_date, trans_type, asset, quantity, cost_basis, subtotal, total, amount_left)
-  VALUES ($doc_id, '$exchange', STR_TO_DATE('$trans_date', '%Y-%m-%dT%H:%i:%sZ'), '$trans_type', '$asset', '$quantity', '$cost_basis', '$subtotal', '$total', '$amount_left');
+  INSERT INTO ${TABLE}(trans_id, user_id, doc_id, exchange, trans_date, trans_type, asset, quantity, cost_basis, subtotal, total, amount_left)
+  VALUES ('$trans_id', '$user_id', '$doc_id', '$exchange', STR_TO_DATE('$trans_date', '%Y-%m-%dT%H:%i:%sZ'), '$trans_type', '$asset', '$quantity', '$cost_basis', '$subtotal', '$total', '$amount_left');
 _EOF
   done | mysql -u"${DB_USER}" -p"${DB_PASSWD}" "${DB_NAME}";
 

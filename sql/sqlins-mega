@@ -8,14 +8,12 @@ DB_NAME="crypto"
 TABLE="mega"
 FILE="data/mega-insert"
 
-cat $FILE | while read \
-  doc_id \
-  user_id \
-  fname \
-  exchange \
+cat $FILE | while read -r \
+  email \
+  pass \
   ; do
   cat <<-_EOF
-  INSERT INTO ${TABLE}(doc_id, user_id, fname, exchange)
-  VALUES ($doc_id, '$user_id','$fname', '$exchange');
+  INSERT INTO ${TABLE}(email, pass)
+  VALUES ('$email', '$pass');
 _EOF
   done | mysql -u"${DB_USER}" -p"${DB_PASSWD}" "${DB_NAME}";

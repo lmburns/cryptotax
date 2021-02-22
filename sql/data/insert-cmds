@@ -1,0 +1,27 @@
+## Commands that worked
+
+insert into mega(email, pass, date_created) values(
+         -> "burnsac@me.com",
+         -> "password");
+
+
+insert into documents(
+         trans_id,
+         user_id,
+         doc_id,
+         exchange,
+         trans_date,
+         trans_type,
+         asset,
+         quantity,
+         cost_basis,
+         subtotal,
+         total,
+         amount_left)
+        values(
+         1, 1, 1, "Coinbase", "2020-12-12 05:44:12",
+         "Buy", "BTC", 0.53432, 1000.00, 20.12, 21.12,
+          21);
+
+
+insert into users(user_id, exchange) values(1, "Coinbase")
