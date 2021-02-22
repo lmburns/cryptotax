@@ -14,31 +14,6 @@ session_start();
 
 if(isset($_SESSION['user_id'])){
 
-$userid = $_SESSION['user_id'];
-    $servername = "localhost";
-    $serusername = "root";
-    $serpassword = "pass";
-    $dbname = "crypto";
-
-    // Create connection
-    $conn = new mysqli($servername, $serusername, $serpassword, $dbname);
-
-    $sql = "SELECT * FROM documents WHERE user_id = '$userid'";
-    $result = mysqli_query($conn, $sql);
-    if (mysqli_num_rows($result) > 0) {
-      echo "<table id=uploadstable><tr><th>filename</th></tr>";
-      while($row = mysqli_fetch_assoc($result)) {
-          
-            $thefilename = $row['filename'];
-            echo "<tr><td><a href=\"uploads/$thefilename\">$thefilename</a></td></tr>";
-            
-            
-        }
-        echo "</table>";
-      }
-
-
-
 
     
     if(isset($_FILES["fileToUpload"])){
@@ -106,6 +81,29 @@ $userid = $_SESSION['user_id'];
     echo '<input type="submit" value="Upload Image" name="submit">';
     echo '</form>';
     
+    
+    $userid = $_SESSION['user_id'];
+    $servername = "localhost";
+    $serusername = "root";
+    $serpassword = "pass";
+    $dbname = "crypto";
+
+    // Create connection
+    $conn = new mysqli($servername, $serusername, $serpassword, $dbname);
+
+    $sql = "SELECT * FROM documents WHERE user_id = '$userid'";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+      echo "<table id=uploadstable><tr><th>filename</th></tr>";
+      while($row = mysqli_fetch_assoc($result)) {
+          
+            $thefilename = $row['filename'];
+            echo "<tr><td><a href=\"uploads/$thefilename\">$thefilename</a></td></tr>";
+            
+            
+        }
+        echo "</table>";
+      }
     
 }
 
