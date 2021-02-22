@@ -1,7 +1,43 @@
+<style>
+
+table,th, td{
+    border: 1px solid black;
+}
+</style>
+
+
+
 <?php
 session_start();
+//print_r($_SESSION);
 
-if(isset($_SESSION['loggedInCryptoEmail'])){
+
+if(isset($_SESSION['user_id'])){
+
+$userid = $_SESSION['user_id'];
+    $servername = "localhost";
+    $serusername = "root";
+    $serpassword = "pass";
+    $dbname = "crypto";
+
+    // Create connection
+    $conn = new mysqli($servername, $serusername, $serpassword, $dbname);
+
+    $sql = "SELECT * FROM documents WHERE user_id = '$userid'";
+    $result = mysqli_query($conn, $sql);
+    if (mysqli_num_rows($result) > 0) {
+      echo "<table id=uploadstable><tr><th>filename</th></tr>";
+      while($row = mysqli_fetch_assoc($result)) {
+          
+            $thefilename = $row['filename'];
+            echo "<tr><td><a href=\"uploads/$thefilename\">$thefilename</a></td></tr>";
+            
+            
+        }
+        echo "</table>";
+      }
+
+
 
 
     
@@ -37,6 +73,24 @@ if(isset($_SESSION['loggedInCryptoEmail'])){
         } else {
           if (move_uploaded_file($_FILES["fileToUpload"]["tmp_name"], $target_file)) {
             echo "The file ". htmlspecialchars( basename( $_FILES["fileToUpload"]["name"])). " has been uploaded.";
+                $servername = "localhost";
+                $serusername = "root";
+                $serpassword = "pass";
+                $dbname = "crypto";
+            $conn = new mysqli($servername, $serusername, $serpassword, $dbname);
+            $stmt = $conn->prepare("INSERT INTO documents (user_id, exchange, filename, filesize) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("ssss", $p1, $p2, $p3, $p4);
+
+            // set parameters and execute
+            $p1 = $_SESSION['user_id'];
+            $p2 = "COINBASE";
+            $p3 = htmlspecialchars(basename($target_file));
+            $p4 = htmlspecialchars(basename($_FILES['fileToUpload']['size']));
+            
+            $stmt->execute();
+          
+          
+          
           } else {
             echo "Sorry, there was an error uploading your file.";
           }
