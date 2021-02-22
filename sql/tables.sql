@@ -24,8 +24,7 @@ CREATE TABLE crypto.documents (
   total DECIMAL(8,2),
   amount_left INTEGER,
   /* amount_left DECIMAL(16, 10), */
-  FOREIGN KEY(user_id) REFERENCES mega(user_id),
-  PRIMARY KEY(doc_id)
+  FOREIGN KEY(user_id) REFERENCES mega(user_id)
 );
 
 -- trans_id to keep track of every line of every document
@@ -36,12 +35,14 @@ CREATE TABLE crypto.documents (
 CREATE TABLE crypto.users (
   user_id INTEGER NOT NULL,
   doc_id INTEGER AUTO_INCREMENT,
+  filename VARCHAR(255) NOT NULL,
   exchange VARCHAR(255) NOT NULL,
   date_uploaded TIMESTAMP DEFAULT NOW(),
   FOREIGN KEY(user_id) REFERENCES mega(user_id),
   FOREIGN KEY(doc_id) REFERENCES documents(doc_id),
-  PRIMARY KEY(user_id, doc_id)
+  PRIMARY KEY(doc_id)
 );
+
 
 -- one line per document
 -- one user can have several entries
