@@ -9,21 +9,9 @@ CREATE TABLE crypto.mega (
 -- first table to have data inserted
 -- one line, one user
 
--- all users & documents table
-CREATE TABLE crypto.users (
-  user_id INTEGER NOT NULL,
-  doc_id INTEGER AUTO_INCREMENT PRIMARY KEY,
-  exchange VARCHAR(255) NOT NULL,
-  date_uploaded TIMESTAMP DEFAULT NOW(),
-  FOREIGN KEY(user_id) REFERENCES mega(user_id)
-);
-
--- one line per document
--- one user can have several entries
-
 -- expanded documents table
 CREATE TABLE crypto.documents (
-  trans_id INTEGER NOT NULL AUTO_INCREMENT,
+  trans_id INTEGER NOT NULL,
   user_id INTEGER NOT NULL,
   doc_id INTEGER NOT NULL,
   exchange VARCHAR(255),
@@ -36,13 +24,26 @@ CREATE TABLE crypto.documents (
   total DECIMAL(8,2),
   amount_left INTEGER,
   FOREIGN KEY(user_id) REFERENCES mega(user_id),
-  FOREIGN KEY(doc_id) REFERENCES users(doc_id),
-  PRIMARY KEY(user_id, doc_id)
+  PRIMARY KEY(doc_id)
   /* amount_left DECIMAL(16,10) NOT NULL */
 );
 
 -- trans_id to keep track of every line of every document
 -- amount_left used as integer for now (will be changed)
+
+-- all users & documents table
+CREATE TABLE crypto.users (
+  user_id INTEGER NOT NULL,
+  doc_id INTEGER AUTO_INCREMENT,
+  exchange VARCHAR(255) NOT NULL,
+  date_uploaded TIMESTAMP DEFAULT NOW(),
+  FOREIGN KEY(user_id) REFERENCES mega(user_id),
+  FOREIGN KEY(doc_id) REFERENCES documents(doc_id),
+  PRIMARY KEY(user_id, doc_id)
+);
+
+-- one line per document
+-- one user can have several entries
 
 
 -- COMMENTS:
