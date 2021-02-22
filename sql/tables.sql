@@ -22,18 +22,9 @@ CREATE TABLE crypto.documents (
   cost_basis DECIMAL(8,2),
   subtotal DECIMAL(10,2),
   total DECIMAL(8,2),
-  amount_left INTEGER
+  amount_left INTEGER,
   /* amount_left DECIMAL(16, 10), */
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   FOREIGN KEY(user_id) REFERENCES mega(user_id)
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
-=======
->>>>>>> Stashed changes
 );
 
 -- trans_id to keep track of every line of every document
@@ -48,20 +39,8 @@ CREATE TABLE crypto.users (
   exchange VARCHAR(255) NOT NULL,
   date_uploaded TIMESTAMP DEFAULT NOW(),
   FOREIGN KEY(user_id) REFERENCES mega(user_id),
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
   FOREIGN KEY(doc_id) REFERENCES documents(doc_id),
   PRIMARY KEY(doc_id)
-=======
-  PRIMARY KEY(user_id_id)
->>>>>>> Stashed changes
-=======
-  PRIMARY KEY(user_id_id)
->>>>>>> Stashed changes
-=======
-  PRIMARY KEY(user_id_id)
->>>>>>> Stashed changes
 );
 
 
