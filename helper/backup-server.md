@@ -1,4 +1,13 @@
-### Setup Server
+## Backup Server
+
+### Backup Entire Server
+
+```sh
+rsync -Prugoptczl --delete-after --exclude "/dev/*" --exclude "/proc/*" --exclude "/sys/*" --exclude "/tmp/*" --exclude "/run/*" --exclude "/mnt/*" --exclude "/media/*" --exclude "swapfile" --exclude "lost+found" root@burnsac.xyz:/ /Volumes/SSD/server-full'
+```
+
+### Backup Packages
+
 #### Way 1:
 **Run these commands to backup the server:**
 

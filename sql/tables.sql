@@ -3,7 +3,7 @@ CREATE TABLE crypto.mega (
   user_id INTEGER AUTO_INCREMENT PRIMARY KEY,
   email VARCHAR(255) NOT NULL,
   pass VARCHAR(255) NOT NULL,
-  signed_up TIMESTAMP DEFAULT NOW()
+  date_created TIMESTAMP DEFAULT NOW()
 );
 
 -- first table to have data inserted
@@ -12,38 +12,38 @@ CREATE TABLE crypto.mega (
 -- all users & documents table
 CREATE TABLE crypto.users (
   user_id INTEGER NOT NULL,
-  doc_id INTEGER NOT NULL PRIMARY KEY,
+  doc_id INTEGER AUTO_INCREMENT PRIMARY KEY,
   exchange VARCHAR(255) NOT NULL,
+  date_uploaded TIMESTAMP DEFAULT NOW(),
   FOREIGN KEY(user_id) REFERENCES mega(user_id)
 );
 
+-- one line per document
+-- one user can have several entries
+
 -- expanded documents table
 CREATE TABLE crypto.documents (
-  trans_id INTEGER NOT NULL,
+  trans_id INTEGER NOT NULL AUTO_INCREMENT,
   user_id INTEGER NOT NULL,
   doc_id INTEGER NOT NULL,
-  exchange VARCHAR(255) NOT NULL,
-  trans_date DATETIME NOT NULL,
-  trans_type VARCHAR(50) NOT NULL,
-  asset VARCHAR(10) NOT NULL,
-  quantity DECIMAL(16,10) NOT NULL,
-  cost_basis DECIMAL(8,2) NOT NULL,
-  subtotal DECIMAL(8,2) NOT NULL,
-  total DECIMAL(8,2) NOT NULL,
-  amount_left INTEGER NOT NULL,
+  exchange VARCHAR(255),
+  trans_date DATETIME,
+  trans_type VARCHAR(50),
+  asset VARCHAR(10),
+  quantity DECIMAL(16,10),
+  cost_basis DECIMAL(8,2),
+  subtotal DECIMAL(10,2),
+  total DECIMAL(8,2),
+  amount_left INTEGER,
   FOREIGN KEY(user_id) REFERENCES mega(user_id),
   FOREIGN KEY(doc_id) REFERENCES users(doc_id),
   PRIMARY KEY(user_id, doc_id)
-  /* amount_left DECIMAL(8,2) NOT NULL */
+  /* amount_left DECIMAL(16,10) NOT NULL */
 );
 
 -- trans_id to keep track of every line of every document
 -- amount_left used as integer for now (will be changed)
-/* 1 Coinbase 2020-05-21T22:27:28Z Buy BTC 0.00201928 9166.63 18.51 20.00 924 */
 
-
--- one line per document
--- one user can have several entries
 
 -- COMMENTS:
 -- no need for a table for each user
