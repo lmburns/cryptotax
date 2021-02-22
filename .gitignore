@@ -4,6 +4,8 @@ __pycache__/
 *.py[cod]
 *$py.class
 
+.chglog
+
 # C extensions
 *.so
 

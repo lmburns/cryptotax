@@ -2,6 +2,10 @@
 n.n.n / 2021-02-22
 ==================
 
+  * table fixed, add filename drop foreign keys primary key issues
+  * table final
+  * table and changelog
+  * table && changelog
   * cleaned stashed changes, tables.sql.bak is backup of other
   * damn cant figure out stash
   * tables.sql fixes

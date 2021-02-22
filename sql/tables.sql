@@ -6,7 +6,7 @@ CREATE TABLE crypto.mega (
   last_name VARCHAR(255) NOT NULL,
   pass VARCHAR(255) NOT NULL,
   date_created TIMESTAMP DEFAULT NOW(),
-  ip_addr VARCHAR(32) NOT NULL,
+  ip_addr VARCHAR(32) NOT NULL
 );
 
 -- first table to have data inserted
@@ -46,7 +46,7 @@ CREATE TABLE crypto.documents(
 -- one user can have several entries
 
 -- sync documents.exchange, users.exchange
--- sync documents.doc_id, users.doc_id
+-- sync documents.doc_id, mega.doc_id
 
 -- method to create doc_id = 000000001 (integers)
 

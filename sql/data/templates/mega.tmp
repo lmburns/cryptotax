@@ -1,1 +1,1 @@
-{{Email}} {{File "/Users/lucasburns/projects/github/cryptotax/sql/data/generator/passwords"}}
+{{Email}} {{Name.first}} {{File "/Users/lucasburns/projects/github/cryptotax/sql/data/generator/passwords"}}
