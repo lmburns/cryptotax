@@ -1,7 +1,7 @@
 -- master table
 CREATE TABLE crypto.mega (
   user_id INTEGER AUTO_INCREMENT PRIMARY KEY,
-  email VARCHAR(255) NOT NULL,
+  email VARCHAR(255) UNIQUE NOT NULL,
   first_name VARCHAR(255) NOT NULL,
   last_name VARCHAR(255) NOT NULL,
   pass VARCHAR(255) NOT NULL,
@@ -14,7 +14,7 @@ CREATE TABLE crypto.mega (
 -- one line, one user
 
 -- expanded documents table
-CREATE TABLE crypto.documents (
+CREATE TABLE crypto.transactions(
   trans_id INTEGER AUTO_INCREMENT PRIMARY KEY,
   user_id INTEGER NOT NULL,
   doc_id INTEGER NOT NULL,
@@ -23,28 +23,25 @@ CREATE TABLE crypto.documents (
   trans_type VARCHAR(50),
   asset VARCHAR(10),
   quantity DECIMAL(16,10),
-  cost_basis DECIMAL(8,2),
-  subtotal DECIMAL(10,2),
-  total DECIMAL(8,2),
+  cost_basis DECIMAL(16,8),
+  subtotal DECIMAL(12,3),
+  total DECIMAL(12,3),
+  currency VARCHAR(255),
   amount_left INTEGER
   /* amount_left DECIMAL(16, 10), */
 );
 
--- FOREIGN KEY: only a unique foreign key will work (none i can find)
-
 -- amount_left used as integer for now (will be changed)
 
 -- all users & documents table
-CREATE TABLE crypto.users (
+CREATE TABLE crypto.documents(
+  id INTEGER AUTO_INCREMENT PRIMARY KEY,
   user_id INTEGER NOT NULL,
   doc_id INTEGER NOT NULL,
   filename VARCHAR(255) NOT NULL,
   exchange VARCHAR(255) NOT NULL,
-  date_uploaded TIMESTAMP DEFAULT NOW(),
-  PRIMARY KEY(doc_id)
+  date_uploaded TIMESTAMP DEFAULT NOW()
 );
-
--- FOREIGN KEY: none will work here unless using trans_id
 
 -- one line per document
 -- one user can have several entries
@@ -52,7 +49,6 @@ CREATE TABLE crypto.users (
 -- sync documents.exchange, users.exchange
 -- sync documents.doc_id, users.doc_id
 
--- method to create trans_id = 000000001 (integers)
 -- method to create doc_id = 000000001 (integers)
 
 -- TODO AT SOME POINT:
