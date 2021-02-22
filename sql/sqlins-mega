@@ -10,10 +10,13 @@ FILE="data/mega-insert"
 
 cat $FILE | while read -r \
   email \
+  first_name \
+  last_name \
   pass \
+  ip_addr \
   ; do
   cat <<-_EOF
-  INSERT INTO ${TABLE}(email, pass)
-  VALUES ('$email', '$pass');
+  INSERT INTO ${TABLE}(email, first_name, last_name, pass, ip_addr)
+  VALUES ('$email', '$first_name', '$last_name', '$pass', '$ip_addr');
 _EOF
   done | mysql -u"${DB_USER}" -p"${DB_PASSWD}" "${DB_NAME}";

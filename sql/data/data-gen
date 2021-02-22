@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+TEMPL_DIR="$HOME/projects/github/cryptotax/sql/data/templates"
+
+fakedata -T "${TEMPL_DIR}/documents-gen.tmp" -l1000 > documents-insert
+fakedata -T "${TEMPL_DIR}/mega-gen.tmp" -l1000 > mega-insert
+
+cat "${TEMPL_DIR}/cb-out" \
+  | awk 'BEGIN{OFS=" "; col1=69}{print col1,$0; col1+=0}' \
+  | awk 'BEGIN{OFS=" "; col1=1}{print col1,$0; col1+=0}'\
+  | awk '$11="USD "$11 \
+  | awk -v OFS=" " '{$12 = int(rand()*1000)} {print}' \
+  > transactions-insert

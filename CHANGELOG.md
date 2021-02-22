@@ -2,6 +2,7 @@
 n.n.n / 2021-02-22
 ==================
 
+  * table to work on php
   * table fixed, add filename drop foreign keys primary key issues
   * table final
   * table and changelog

@@ -9,9 +9,6 @@ CREATE TABLE crypto.mega (
   ip_addr VARCHAR(32) NOT NULL
 );
 
--- first table to have data inserted
--- one line, one user
-
 -- expanded documents table
 CREATE TABLE crypto.transactions(
   trans_id INTEGER AUTO_INCREMENT PRIMARY KEY,

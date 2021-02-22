@@ -5,7 +5,7 @@
 awk 'BEGIN{OFS=" "; col1=69}{print col1,$0; col1+=0}'
 
 # Enter column for amount_left
-awk -v OFS=" " '{$10 = int(rand()*1000)} {print}'
+awk -v OFS=" " '{$12 = int(rand()*1000)} {print}'
 
 # Add email to beginning of every line
 awk '$1="burnsac@me.com "$1

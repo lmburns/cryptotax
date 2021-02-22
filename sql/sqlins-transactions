@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# inserts data into sql table - table transactions
+
+DB_USER="root"
+DB_PASSWD="freakkkk"
+DB_NAME="crypto"
+TABLE="transactions"
+FILE="data/transactions-insert"
+
+cat $FILE | while read \
+  user_id \
+  doc_id \
+  exchange \
+  trans_date \
+  trans_type \
+  asset \
+  quantity \
+  cost_basis \
+  subtotal \
+  total \
+  currency \
+  amount_left \
+  ; do
+  cat <<-_EOF
+  INSERT INTO ${TABLE}(user_id, doc_id, exchange, trans_date, trans_type, asset, quantity, cost_basis, subtotal, total, currency, amount_left)
+  VALUES ('$user_id', '$doc_id', '$exchange', STR_TO_DATE('$trans_date', '%Y-%m-%dT%H:%i:%sZ'), '$trans_type', '$asset', '$quantity', '$cost_basis', '$subtotal', '$total', '$currency', '$amount_left');
+_EOF
+  done | mysql -u"${DB_USER}" -p"${DB_PASSWD}" "${DB_NAME}";
+
+
+# Testing another way
+
+# mysql --user=$DB_USER --password=$DB_PASSWD $DB_NAME << EOF
+# INSERT INTO $TABLE (id, doc_id, exchange, trans_date, trans_type, asset, quantity, cost_basis, subtotal, total, amount_left) VALUES ("$id", "$doc_id", "$exchange", "$trans_date", "$trans_type", "$asset", "$quantity", "$cost_basis", "$subtotal", "$total", "$amount_left");
+# EOF

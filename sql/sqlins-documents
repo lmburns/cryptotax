@@ -9,28 +9,13 @@ TABLE="documents"
 FILE="data/documents-insert"
 
 cat $FILE | while read \
-  trans_id \
   user_id \
-  doc_id \
   exchange \
-  trans_date \
-  trans_type \
-  asset \
-  quantity \
-  cost_basis \
-  subtotal \
-  total \
-  amount_left \
+  filename \
+  filesize \
   ; do
   cat <<-_EOF
-  INSERT INTO ${TABLE}(trans_id, user_id, doc_id, exchange, trans_date, trans_type, asset, quantity, cost_basis, subtotal, total, amount_left)
-  VALUES ('$trans_id', '$user_id', '$doc_id', '$exchange', STR_TO_DATE('$trans_date', '%Y-%m-%dT%H:%i:%sZ'), '$trans_type', '$asset', '$quantity', '$cost_basis', '$subtotal', '$total', '$amount_left');
+  INSERT INTO ${TABLE}(user_id, exchange, filename, filesize)
+  VALUES ($user_id, '$exchange','$filename', '$filesize');
 _EOF
   done | mysql -u"${DB_USER}" -p"${DB_PASSWD}" "${DB_NAME}";
-
-
-# Testing another way
-
-# mysql --user=$DB_USER --password=$DB_PASSWD $DB_NAME << EOF
-# INSERT INTO $TABLE (id, doc_id, exchange, trans_date, trans_type, asset, quantity, cost_basis, subtotal, total, amount_left) VALUES ("$id", "$doc_id", "$exchange", "$trans_date", "$trans_type", "$asset", "$quantity", "$cost_basis", "$subtotal", "$total", "$amount_left");
-# EOF
