@@ -5,7 +5,9 @@ CREATE TABLE crypto.mega (
   first_name VARCHAR(255) NOT NULL,
   last_name VARCHAR(255) NOT NULL,
   pass VARCHAR(255) NOT NULL,
-  date_created TIMESTAMP DEFAULT NOW()
+  date_created TIMESTAMP DEFAULT NOW(),
+  ip_addr VARCHAR(32) NOT NULL,
+  filesize DECIMAL(10,2) NOT NULL
 );
 
 -- first table to have data inserted
@@ -28,6 +30,8 @@ CREATE TABLE crypto.documents (
   /* amount_left DECIMAL(16, 10), */
 );
 
+-- FOREIGN KEY: only a unique foreign key will work (none i can find)
+
 -- amount_left used as integer for now (will be changed)
 
 -- all users & documents table
@@ -39,6 +43,9 @@ CREATE TABLE crypto.users (
   date_uploaded TIMESTAMP DEFAULT NOW(),
   PRIMARY KEY(doc_id)
 );
+
+-- FOREIGN KEY: none will work here unless using trans_id
+
 -- one line per document
 -- one user can have several entries
 
@@ -51,5 +58,3 @@ CREATE TABLE crypto.users (
 -- TODO AT SOME POINT:
 -- change database and table names when going public
 -- password hasing algorithm (SHA256+)
--- ip
--- filesize
