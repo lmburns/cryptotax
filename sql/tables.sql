@@ -22,7 +22,8 @@ CREATE TABLE crypto.transactions(
   cost_basis DECIMAL(16,8),
   subtotal DECIMAL(12,3),
   total DECIMAL(12,3),
-  currency VARCHAR(255),
+  buy_currency VARCHAR(255),
+  sell_currency VARCHAR(255),
   amount_left INTEGER
   /* amount_left DECIMAL(16, 10), */
 );

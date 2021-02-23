@@ -16,5 +16,6 @@ cat "${TEMPL_DIR}/cb-out" \
   | awk 'BEGIN{OFS=" "; col1=69}{print col1,$0; col1+=0}' \
   | awk 'BEGIN{OFS=" "; col1=1}{print col1,$0; col1+=0}'\
   | awk '$11="USD "$11' \
-  | awk -v OFS=" " '{$12 = int(rand()*1000)} {print}' \
+  | awk '$12="USD "$12' \
+  | awk -v OFS=" " '{$13 = int(rand()*1000)} {print}' \
   > "${OUT_DIR}/transactions-insert"

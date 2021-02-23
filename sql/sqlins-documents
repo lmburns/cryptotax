@@ -6,7 +6,7 @@ DB_USER="root"
 DB_PASSWD="freakkkk"
 DB_NAME="crypto"
 TABLE="documents"
-FILE="data/documents-insert"
+FILE="data/out/documents-insert"
 
 cat $FILE | while read \
   user_id \
