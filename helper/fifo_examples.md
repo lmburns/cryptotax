@@ -5,6 +5,7 @@
 #### Handle: Buy = nothing
    1. **amount left** = 0.5
 
+---------------------------------------------------------
 ### Case 2
 #### Trade: 0.25 BTC -> 7.5 ETH
    - **BTC cost basis**: $22000
@@ -29,7 +30,13 @@
          - Keep cost basis and total cost for note.
    5. **Capital gains: $500 (5500 - 5000)**
 
-
+| buy_curr | buy_quant | buy_cb | sell_curr | sell_quant | sell_cb | amount_left |
+|----------|-----------|--------|-----------|------------|---------|-------------|
+| BTC      | 0.5       | 20000  | USD       | 10000      | 10000   | 0.5         |
+| ETH      | 7.5       | 733    | BTC       | 0.25       | 22000   | 0.25 or 7.5 |
+| USD      | 7000      | 7000   | BTC       | 0.25       | 28000   | 0           |
+| USD      | 6000      | 6000   | ETH       | 6.0        | 1000    | ???         |
+---------------------------------------------------------
 ### Case 3
 #### Sell: 0.25 BTC -> $7000
    - **BTC cost basis**: $28,000
@@ -47,7 +54,7 @@
          - **amount left** = 0.0 BTC
    4. **Capital gains: $2000 (7000 - 5000)**
 
-
+---------------------------------------------------------
 ### Case 4
 #### Sell: 6 ETH -> $6000
    - **ETH cost basis**: $1000
@@ -61,7 +68,14 @@
          - Cost basis = $733
          - 6 ETH * $733 = $4398
          - Spent $4398 for 6 ETH on Trans2
-   3. Calculate how much we sold the 6 eth for. Easy!
+   2. Calculate how much we sold the 6 eth for. Easy!
          - Gained $6000 for 6 ETH on Trans4
          - NOTE: “amount_left:1.5” on Trans2
-   4. **Capital Gains: $1602 (6000 - 4398)**
+   3. **Capital Gains: $1602 (6000 - 4398)**
+
+
+|                       | After 1st | After 2nd | After 3rd | After 4 |
+| amount_left in Trans1 | 0.5       | 0.25      | 0         | 0       |
+| amount_left in Trans2 |           | 7.5       | 7.5       | 1.5     |
+| amount_left in Trans3 |           |           | 0         | 0       |
+| amount_left in Trans4 |           |           |           | 0       |

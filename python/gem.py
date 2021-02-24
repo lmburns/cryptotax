@@ -6,6 +6,7 @@ import requests
 from sspipe import p, px
 import re
 import pandas as pd
+import numpy as np
 
 from exchangeratesapi import Api
 
@@ -38,19 +39,28 @@ df.columns.values
 
 ndf = pd.DataFrame()
 
+# OTHER:
+    # df['c2'] = df['c1'].apply(lambda x: 10 if x == 'Value' else x)
+
 # TODO:
-    # script to tell whether buy or sell
+    # regex conditional selection
 ndf['trans_date'] = df['event_date'] + ' ' + df['event_time']
 ndf['trans_type'] = df['side']
-ndf['asset'] = df['symbol'].str.extract(r'(.+?(?=(USD)))')[0]
+
+ndf['temp_curr'] = df['symbol']
+ndf['trans_buy_curr'] = np.where(ndf['trans_type'] == 'buy',
+                             ndf['temp_curr'].str.extract(r'(.+?(?=(USD)))')[1],
+                             ndf['temp_curr'].str.extract(r'(.+?(?=(USD)))')[0])
+
 
 ndf['trans_buy_quantity'] = df['fill_quantity_(btc)']
-ndf['trans_buy_curr'] = df['symbol'].str.extract(r'(.+?(?=(USD)))')[1]
 ndf['trans_buy_cb_USD'] = df['fill_price_(usd)']
 
-ndf['trans_sell_quantity'] = df['fill_quantity_(btc)']
 ndf['trans_sell_curr'] = df['symbol'].str.extract(r'(.+?(?=(USD)))')[1]
+ndf['trans_sell_quantity'] = df['fill_quantity_(btc)']
 ndf['trans_sell_cb_USD'] = df['fill_price_(usd)']
+
+ndf = ndf.drop(['trans_type', 'temp_curr'], axis=1)
 
 ndf['subtotal'] = ndf['quantity'] * ndf['cost_basis'] | px.astype(float)
 ndf['total'] = ndf['quantity'] * ndf['cost_basis'] | px.astype(float)

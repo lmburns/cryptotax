@@ -1,4 +1,14 @@
-### Added python folder and fifo document understanding trades Problem: Gemini csv needs worked on (HEAD -> master)
+### Committing for you to see changes before I go to work Problem: Still need `trans_buy_curr` and `trans_sell_curr` to be figured out. Also, fill out the table that I put into `fifo_examples` if you would, please. (HEAD -> master)
+>Wed, 24 Feb 2021 12:02:39 -0600
+
+>Author: Lucas Burns (burnsac@me.com)
+
+>Commiter: Lucas Burns (burnsac@me.com)
+
+
+
+
+### Added python folder and fifo document understanding trades Problem: Gemini csv needs worked on (origin/master)
 >Wed, 24 Feb 2021 10:29:10 -0600
 
 >Author: Lucas Burns (burnsac@me.com)
@@ -8,7 +18,7 @@
 
 
 
-### Subject: Added buy currency and sell currency to sql table Problem: Started using gemini csv Authored-by: Lucas Burns <burnsac@me.com> (origin/master)
+### Subject: Added buy currency and sell currency to sql table Problem: Started using gemini csv Authored-by: Lucas Burns <burnsac@me.com>
 >Tue, 23 Feb 2021 17:10:54 -0600
 
 >Author: Lucas Burns (burnsac@me.com)
