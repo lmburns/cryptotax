@@ -12,10 +12,14 @@ fakedata -T "${TEMPL_DIR}/documents-gen.tmp" -l1000 \
 
 fakedata -T "${TEMPL_DIR}/mega-gen.tmp" -l1000 > "${OUT_DIR}/mega-insert"
 
-cat "${TEMPL_DIR}/cb-out" \
-  | awk 'BEGIN{OFS=" "; col1=69}{print col1,$0; col1+=0}' \
-  | awk 'BEGIN{OFS=" "; col1=1}{print col1,$0; col1+=0}'\
-  | awk '$11="USD "$11' \
-  | awk '$12="USD "$12' \
-  | awk -v OFS=" " '{$13 = int(rand()*1000)} {print}' \
-  > "${OUT_DIR}/transactions-insert"
+# new way using template, not using actual data
+fakedata -T "${TEMPL_DIR}/trans-gen.tmp" -l1000 > "${OUT_DIR}/transactions-insert"
+
+# used with actual data
+# cat "${TEMPL_DIR}/cb-out" \
+#   | awk 'BEGIN{OFS=" "; col1=69}{print col1,$0; col1+=0}' \
+#   | awk 'BEGIN{OFS=" "; col1=1}{print col1,$0; col1+=0}'\
+#   | awk '$11="USD "$11' \
+#   | awk '$12="USD "$12' \
+#   | awk -v OFS=" " '{$13 = int(rand()*1000)} {print}' \
+#   > "${OUT_DIR}/transactions-insert"

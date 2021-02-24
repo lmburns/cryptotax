@@ -13,18 +13,16 @@ cat $FILE | while read \
   doc_id \
   exchange \
   trans_date \
-  trans_type \
-  asset \
-  quantity \
-  cost_basis \
-  subtotal \
-  total \
-  buy_currency \
-  sell_currency \
+  trans_buy_curr \
+  trans_buy_quant \
+  trans_buy_cb_USD \
+  trans_sell_curr \
+  trans_sell_quant \
+  trans_sell_cb_USD \
   amount_left \
   ; do
   cat <<-_EOF
-  INSERT INTO ${TABLE}(user_id, doc_id, exchange, trans_date, trans_type, asset, quantity, cost_basis, subtotal, total, buy_currency, sell_currency, amount_left)
-  VALUES ('$user_id', '$doc_id', '$exchange', STR_TO_DATE('$trans_date', '%Y-%m-%dT%H:%i:%sZ'), '$trans_type', '$asset', '$quantity', '$cost_basis', '$subtotal', '$total', '$buy_currency', '$sell_currency', '$amount_left');
+  INSERT INTO ${TABLE}(user_id, doc_id, exchange, trans_date, trans_buy_curr, trans_buy_quant, trans_buy_cb_USD, trans_sell_curr, trans_sell_quant, trans_sell_cb_USD, amount_left)
+  VALUES ('$user_id', '$doc_id', '$exchange', STR_TO_DATE('$trans_date', '%Y-%m-%dT%H:%i:%sZ'), '$trans_buy_curr', '$trans_buy_quant', '$trans_buy_cb_USD', '$trans_sell_curr', '$trans_sell_quant', '$trans_sell_cb_USD', '$amount_left');
 _EOF
   done | mysql -u"${DB_USER}" -p"${DB_PASSWD}" "${DB_NAME}";

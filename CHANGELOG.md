@@ -1,4 +1,14 @@
-### Subject: Added buy currency and sell currency to sql table Problem: Started using gemini csv Authored-by: Lucas Burns <burnsac@me.com> (HEAD -> master)
+### Added python folder and fifo document understanding trades Problem: Gemini csv needs worked on (HEAD -> master)
+>Wed, 24 Feb 2021 10:29:10 -0600
+
+>Author: Lucas Burns (burnsac@me.com)
+
+>Commiter: Lucas Burns (burnsac@me.com)
+
+
+
+
+### Subject: Added buy currency and sell currency to sql table Problem: Started using gemini csv Authored-by: Lucas Burns <burnsac@me.com> (origin/master)
 >Tue, 23 Feb 2021 17:10:54 -0600
 
 >Author: Lucas Burns (burnsac@me.com)
@@ -8,7 +18,7 @@
 
 
 
-### Fixed a small bug (origin/master)
+### Fixed a small bug
 >Mon, 22 Feb 2021 16:04:10 -0600
 
 >Author: tthudium (tthudium@gmail.com)

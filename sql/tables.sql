@@ -16,14 +16,14 @@ CREATE TABLE crypto.transactions(
   doc_id INTEGER NOT NULL,
   exchange VARCHAR(255),
   trans_date DATETIME,
-  trans_type VARCHAR(50),
-  asset VARCHAR(10),
-  quantity DECIMAL(16,10),
-  cost_basis DECIMAL(16,8),
+  trans_buy_curr VARCHAR(255),
+  trans_buy_quant DECIMAL(16,10),
+  trans_buy_cb_USD DECIMAL(16,8),
+  trans_sell_curr VARCHAR(255),
+  trans_sell_quant DECIMAL(16,10),
+  trans_sell_cb_USD DECIMAL(16,10),
   subtotal DECIMAL(12,3),
   total DECIMAL(12,3),
-  buy_currency VARCHAR(255),
-  sell_currency VARCHAR(255),
   amount_left INTEGER
   /* amount_left DECIMAL(16, 10), */
 );
