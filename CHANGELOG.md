@@ -1,4 +1,14 @@
-### Committing for you to see changes before I go to work Problem: Still need `trans_buy_curr` and `trans_sell_curr` to be figured out. Also, fill out the table that I put into `fifo_examples` if you would, please. (HEAD -> master)
+### compute currency exchange, your python script addded (HEAD -> master)
+>Thu, 25 Feb 2021 13:42:18 -0600
+
+>Author: Lucas Burns (burnsac@me.com)
+
+>Commiter: Lucas Burns (burnsac@me.com)
+
+
+
+
+### Committing for you to see changes before I go to work Problem: Still need `trans_buy_curr` and `trans_sell_curr` to be figured out. Also, fill out the table that I put into `fifo_examples` if you would, please. (origin/master)
 >Wed, 24 Feb 2021 12:02:39 -0600
 
 >Author: Lucas Burns (burnsac@me.com)
@@ -8,7 +18,7 @@
 
 
 
-### Added python folder and fifo document understanding trades Problem: Gemini csv needs worked on (origin/master)
+### Added python folder and fifo document understanding trades Problem: Gemini csv needs worked on
 >Wed, 24 Feb 2021 10:29:10 -0600
 
 >Author: Lucas Burns (burnsac@me.com)
