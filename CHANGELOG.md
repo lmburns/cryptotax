@@ -1,4 +1,14 @@
-### fixed cb-gem.md table (HEAD -> master)
+### updated some python, think theres errors in the original one (HEAD -> master)
+>Fri, 26 Feb 2021 10:13:47 -0600
+
+>Author: Lucas Burns (burnsac@me.com)
+
+>Commiter: Lucas Burns (burnsac@me.com)
+
+
+
+
+### fixed cb-gem.md table (origin/master)
 >Thu, 25 Feb 2021 13:47:10 -0600
 
 >Author: Lucas Burns (burnsac@me.com)
@@ -8,7 +18,7 @@
 
 
 
-### compute currency exchange, your python script addded (origin/master)
+### compute currency exchange, your python script addded
 >Thu, 25 Feb 2021 13:42:18 -0600
 
 >Author: Lucas Burns (burnsac@me.com)

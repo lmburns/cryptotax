@@ -36,14 +36,8 @@ api = Api()
 # supported currencies
 # print(api.supported_currencies)
 
-print(api.get_rates('USD'))
-
-df.columns.values
-
 ndf = pd.DataFrame()
 
-# TODO:
-    # regex conditional selection
 ndf['trans_date'] = pd.to_datetime(df['event_date'] + ' ' + df['event_time'])
 ndf['trans_type'] = df['side']
 
@@ -58,19 +52,47 @@ ndf['trans_buy_curr'] = np.where(ndf['trans_type'] == 'buy',
 ndf['trans_buy_quantity'] = df['fill_quantity_(btc)']
 ndf['trans_buy_cb_USD'] = df['fill_price_(usd)']
 
+# Figured that the reverse of this would work, however, since this is using the same column
+# both buy_curr and sell_curr end up with the same if the following logic is implemented:
 # sell_curr = USD where trans_type == 'sell' else BTC
 ndf['trans_sell_curr'] = np.where(ndf['trans_type'] == 'sell',
-                             ndf['temp_curr'].str.extract(r'(.+?(?=(USD)))')[1],
-                             ndf['temp_curr'].str.extract(r'(.+?(?=(USD)))')[0])
+                             ndf['temp_curr'].str.extract(r'(.+?(?=(USD)))')[0],
+                             ndf['temp_curr'].str.extract(r'(.+?(?=(USD)))')[1]
                         )
 
 ndf['trans_sell_quantity'] = df['fill_quantity_(btc)']
+
 ndf['trans_sell_cb_USD'] = df['fill_price_(usd)']
+####################################################
+ndf['orig_quantity_btc'] = df['original_quantity_(btc)']
+ndf['tot_exec_quant_btc'] = df['total_exec_quantity_(btc)']     # total_exec_quantity is only different from fill_quantity on sells
+# ndf['orig_quantity_btc'] - ndf['tot_exec_quant_btc']
+ndf['remain_quant'] = df['remaining_quantity_(btc)']
+
 
 ndf = ndf.drop(['trans_type', 'temp_curr'], axis=1)
 
 ndf = ndf.reset_index(drop=True)
-ndf
+
+ndf.loc[3,:]
+
+##########################################
+########### exchange function ###########
+##########################################
+
+# Somewhat working on it for the dataframe, I think that there are several spots that are messed up in original and am too confused
+def crypt(j, amount_sold):
+    trans = ndf.iloc[:, np.r_[1:7, 9]]
+    temp = trans.iloc[j,:]
+    for i in range(trans.shape[0]):
+        if trans.iloc[i,0] == temp[3]: # b_curr == s_curr
+            if float(trans.iloc[i,6]) > 0: # amount left > 0
+                buy_amount = float(trans.iloc[i,2]) * float(trans.iloc[i,3]) | p(str) # gained = b_quant * b_cost_basis (buying)
+                sell_amount = float(trans.iloc[i,1]) * float(trans.iloc[i,2]) | p(str) # spent = s_quant * s_cost_basisc (selling)
+                profit = float(buy_amount) - float(sell_amount) | p(str) # gained - spent
+                print(f"Bought {trans.iloc[i,1]} {trans.iloc[i,0]} for {buy_amount} and sold {trans.iloc[i,4]} {trans.iloc[i,3]} for {sell_amount} leaving a profit of {profit}")
+                trans.iloc[i,6] = float(trans.iloc[i,7]) - float(trans.iloc[j,4])
+
 ##########################################
 #### testing exchange rate conversion ####
 ##########################################
