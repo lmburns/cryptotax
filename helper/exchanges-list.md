@@ -3,6 +3,8 @@
 **Add support for cash app**
 
 1. Binance
+  - Warning: Binance does not export your complete trading history via API or CSV. You can find the current data gaps here.
+  - Most importantly, Binance does not provide Margin Trades as Profit/Loss, which makes it currently impossible for any crypto software to calculate correct gains and taxes for Binance Margin Trades.
 2. Coinbase
 3. Coinsbit
 4. Bittrex
