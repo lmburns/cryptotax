@@ -1,4 +1,14 @@
-### check cointracking.csv (HEAD -> master)
+### sql table working new (HEAD -> master)
+>Fri, 26 Feb 2021 12:57:32 -0600
+
+>Author: Lucas Burns (burnsac@me.com)
+
+>Commiter: Lucas Burns (burnsac@me.com)
+
+
+
+
+### check cointracking.csv (origin/master)
 >Fri, 26 Feb 2021 10:22:40 -0600
 
 >Author: Lucas Burns (burnsac@me.com)
@@ -8,7 +18,7 @@
 
 
 
-### updated some python, think theres errors in the original one (origin/master)
+### updated some python, think theres errors in the original one
 >Fri, 26 Feb 2021 10:13:47 -0600
 
 >Author: Lucas Burns (burnsac@me.com)

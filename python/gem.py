@@ -36,6 +36,9 @@ api = Api()
 # supported currencies
 # print(api.supported_currencies)
 
+
+# limit price
+
 ndf = pd.DataFrame()
 
 ndf['trans_date'] = pd.to_datetime(df['event_date'] + ' ' + df['event_time'])
@@ -52,9 +55,6 @@ ndf['trans_buy_curr'] = np.where(ndf['trans_type'] == 'buy',
 ndf['trans_buy_quantity'] = df['fill_quantity_(btc)']
 ndf['trans_buy_cb_USD'] = df['fill_price_(usd)']
 
-# Figured that the reverse of this would work, however, since this is using the same column
-# both buy_curr and sell_curr end up with the same if the following logic is implemented:
-# sell_curr = USD where trans_type == 'sell' else BTC
 ndf['trans_sell_curr'] = np.where(ndf['trans_type'] == 'sell',
                              ndf['temp_curr'].str.extract(r'(.+?(?=(USD)))')[0],
                              ndf['temp_curr'].str.extract(r'(.+?(?=(USD)))')[1]

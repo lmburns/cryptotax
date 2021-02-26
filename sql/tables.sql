@@ -1,3 +1,7 @@
+DROP DATABASE IF EXISTS crypto;
+CREATE DATABASE crypto;
+USE crypto;
+
 -- master table
 CREATE TABLE crypto.mega (
   user_id INTEGER AUTO_INCREMENT PRIMARY KEY,
@@ -22,8 +26,6 @@ CREATE TABLE crypto.transactions(
   trans_sell_curr VARCHAR(255),
   trans_sell_quant DECIMAL(16,10),
   trans_sell_cb_USD DECIMAL(16,10),
-  subtotal DECIMAL(12,3),
-  total DECIMAL(12,3),
   amount_left INTEGER
   /* amount_left DECIMAL(16, 10), */
 );
@@ -45,8 +47,6 @@ CREATE TABLE crypto.documents(
 
 -- sync documents.exchange, users.exchange
 -- sync documents.doc_id, mega.doc_id
-
--- method to create doc_id = 000000001 (integers)
 
 -- TODO AT SOME POINT:
 -- change database and table names when going public
