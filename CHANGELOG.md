@@ -1,4 +1,14 @@
-### sql table working new (HEAD -> master)
+### fixed (HEAD -> master)
+>Tue, 2 Mar 2021 15:35:06 -0600
+
+>Author: Lucas Burns (burnsac@me.com)
+
+>Commiter: Lucas Burns (burnsac@me.com)
+
+
+
+
+### sql table working new (origin/master)
 >Fri, 26 Feb 2021 12:57:32 -0600
 
 >Author: Lucas Burns (burnsac@me.com)
@@ -8,7 +18,7 @@
 
 
 
-### check cointracking.csv (origin/master)
+### check cointracking.csv
 >Fri, 26 Feb 2021 10:22:40 -0600
 
 >Author: Lucas Burns (burnsac@me.com)
